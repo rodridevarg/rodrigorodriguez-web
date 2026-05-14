@@ -97,22 +97,6 @@
     right: 0;
   }
 
-  .nav__menu::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-  }
-
-  .nav__menu.is-open::before {
-    opacity: 1;
-    pointer-events: all;
-  }
-
   .nav__menu li {
     width: 100%;
     border-bottom: 1px solid var(--border);

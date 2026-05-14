@@ -5,48 +5,71 @@
      NAVBAR SCROLL EFFECT
      ======================================== */
   const header = document.getElementById('header');
-  function onScroll() {
-    if (window.scrollY > 20) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
+  if (header) {
+    function onScroll() {
+      if (window.scrollY > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
     }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 
   /* ========================================
-     MOBILE MENU TOGGLE
+     MOBILE MENU
      ======================================== */
   const navToggle = document.getElementById('navToggle');
   const navMenu = document.getElementById('navMenu');
-  const navLinks = navMenu.querySelectorAll('.nav__link');
+  const navOverlay = document.getElementById('navOverlay');
 
-  function toggleMenu() {
-    const isOpen = navMenu.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded', String(isOpen));
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-  }
+  if (navToggle && navMenu && navOverlay) {
+    const navLinks = navMenu.querySelectorAll('.nav__link');
 
-  navToggle.addEventListener('click', toggleMenu);
+    function openMenu() {
+      navMenu.classList.add('is-open');
+      navOverlay.removeAttribute('hidden');
+      navToggle.setAttribute('aria-expanded', 'true');
+      navToggle.setAttribute('aria-label', 'Cerrar menú');
+      document.body.style.overflow = 'hidden';
+    }
 
-  // Close menu on link click
-  navLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
+    function closeMenu() {
+      navMenu.classList.remove('is-open');
+      navOverlay.setAttribute('hidden', '');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Abrir menú');
+      document.body.style.overflow = '';
+    }
+
+    function toggleMenu() {
       if (navMenu.classList.contains('is-open')) {
-        toggleMenu();
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    navToggle.addEventListener('click', toggleMenu);
+    navOverlay.addEventListener('click', closeMenu);
+
+    // Close menu on link click
+    navLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (navMenu.classList.contains('is-open')) {
+          closeMenu();
+        }
+      });
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
+        closeMenu();
       }
     });
-  });
-
-  // Close menu on backdrop click
-  navMenu.addEventListener('click', function (e) {
-    if (e.target === navMenu.querySelector('::before') || e.target === navMenu) {
-      // Not directly clickable due to pseudo-element, but safety fallback
-    }
-  });
-  // Better: close when clicking the overlay (handled via CSS pointer-events, but we can add an explicit overlay if needed)
-  // For simplicity, the CSS ::before approach handles overlay clicks because it's inside navMenu.
+  }
 
   /* ========================================
      SCROLL ANIMATIONS (IntersectionObserver)
@@ -92,18 +115,18 @@
      ======================================== */
   const form = document.querySelector('.contact__form');
   if (form) {
-    form.addEventListener('submit', function (e) {
-      // Formspree handles the real submit; this is just for UX
+    form.addEventListener('submit', function () {
       const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Enviando...';
-      btn.disabled = true;
+      if (btn) {
+        btn.textContent = 'Enviando...';
+        btn.disabled = true;
 
-      // Re-enable after a timeout in case Formspree redirect fails or user goes back
-      setTimeout(function () {
-        btn.textContent = originalText;
-        btn.disabled = false;
-      }, 4000);
+        // Re-enable after a timeout in case Formspree redirect fails or user goes back
+        setTimeout(function () {
+          btn.textContent = 'Enviar mensaje';
+          btn.disabled = false;
+        }, 4000);
+      }
     });
   }
 })();

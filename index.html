@@ -8,6 +8,7 @@
   <meta name="keywords" content="bot whatsapp, tiendas virtuales, automatización, desarrollador web, ventas whatsapp" />
   <meta name="author" content="Rodrigo Rodriguez" />
   <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0B0C10" />
   <link rel="canonical" href="https://rodrigorodriguez.com.ar/" />
 
   <!-- Open Graph -->
@@ -70,10 +71,12 @@
   -->
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Saltar al contenido</a>
+
   <!-- Navbar -->
   <header class="header" id="header">
     <nav class="navbar container" aria-label="Navegación principal">
-      <a href="#" class="logo" aria-label="Inicio">
+      <a href="#hero" class="logo" aria-label="Ir al inicio">
         <span class="logo__text">Rodrigo Rodriguez</span>
       </a>
 
@@ -81,12 +84,13 @@
         <span class="hamburger"></span>
       </button>
 
-      <ul class="nav__menu" id="navMenu" role="menubar">
-        <li role="none"><a href="#hero" class="nav__link" role="menuitem">Inicio</a></li>
-        <li role="none"><a href="#bot" class="nav__link" role="menuitem">El Bot</a></li>
-        <li role="none"><a href="#servicios" class="nav__link" role="menuitem">Servicios</a></li>
-        <li role="none"><a href="#contacto" class="nav__link" role="menuitem">Contacto</a></li>
+      <ul class="nav__menu" id="navMenu">
+        <li><a href="#hero" class="nav__link">Inicio</a></li>
+        <li><a href="#bot" class="nav__link">El Bot</a></li>
+        <li><a href="#servicios" class="nav__link">Servicios</a></li>
+        <li><a href="#contacto" class="nav__link">Contacto</a></li>
       </ul>
+      <div class="nav-overlay" id="navOverlay" hidden></div>
 
       <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20Bot%20de%20WhatsApp" class="btn btn--small btn--nav" target="_blank" rel="noopener noreferrer">
         Hablame
@@ -94,7 +98,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- Hero -->
     <section class="hero" id="hero" aria-label="Presentación principal">
       <div class="container hero__container">
@@ -122,8 +126,8 @@
           </div>
         </div>
       </div>
-      <div class="hero__scroll" aria-hidden="true">
-        <a href="#bot" class="scroll-indicator" aria-label="Desplazar hacia abajo">
+      <div class="hero__scroll">
+        <a href="#bot" class="scroll-indicator" aria-label="Desplazar hacia la sección del bot">
           <span class="scroll-indicator__mouse"><span class="scroll-indicator__wheel"></span></span>
         </a>
       </div>
@@ -259,15 +263,15 @@
           <form class="contact__form" action="https://formspree.io/f/rodrigo.desarrollador@gmail.com" method="POST" data-animate="fade-up">
             <div class="form__group">
               <label for="name" class="form__label">Nombre</label>
-              <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre" required />
+              <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre" autocomplete="name" required />
             </div>
             <div class="form__group">
               <label for="email" class="form__label">Email</label>
-              <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" required />
+              <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" autocomplete="email" required />
             </div>
             <div class="form__group">
               <label for="message" class="form__label">Mensaje</label>
-              <textarea id="message" name="message" class="form__input form__input--textarea" rows="5" placeholder="Contame sobre tu proyecto..." required></textarea>
+              <textarea id="message" name="message" class="form__input form__input--textarea" rows="5" placeholder="Contame sobre tu proyecto..." autocomplete="off" required></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--block">Enviar mensaje</button>
             <p class="form__note">También podés escribirme directo por <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20Bot%20de%20WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>

@@ -14,7 +14,7 @@
   --radius-sm: 10px;
   --shadow: 0 10px 40px rgba(0,0,0,0.4);
   --shadow-accent: 0 10px 40px rgba(0,168,107,0.2);
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   --container: 1200px;
   --header-h: 72px;
 }
@@ -51,6 +51,26 @@ ul {
 img {
   max-width: 100%;
   display: block;
+}
+
+/* ========================================
+   SKIP LINK
+   ======================================== */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 24px;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+  top: 16px;
 }
 
 /* ========================================
@@ -112,6 +132,16 @@ img {
 
 .btn--block {
   width: 100%;
+}
+
+.btn:focus-visible,
+.nav__link:focus-visible,
+.whatsapp-float:focus-visible,
+.form__input:focus-visible,
+.contact__value:focus-visible,
+.scroll-indicator:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
 /* ========================================
@@ -180,6 +210,21 @@ img {
 
 .nav__link:hover::after {
   width: 100%;
+}
+
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-overlay:not([hidden]) {
+  opacity: 1;
+  visibility: visible;
 }
 
 .nav__toggle {
