@@ -1,21 +1,28 @@
 /* ========================================
    RESPONSIVE DESIGN
-   Mobile First approach
+   Shared responsive styles
    ======================================== */
 
-/* Tablets and small desktops */
+/* Tablets */
 @media (max-width: 1024px) {
-  .hero__container {
+  .hero--landing .hero__container,
+  .hero--home .hero__container,
+  .about__container,
+  .demo__container,
+  .contact--landing,
+  .contact--home {
     gap: 40px;
   }
 
   .features,
-  .services {
+  .services,
+  .projects {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .feature-card:last-child,
-  .service-card:last-child {
+  .service-card:last-child,
+  .project-card:last-child {
     grid-column: 1 / -1;
     max-width: 480px;
     margin: 0 auto;
@@ -25,11 +32,7 @@
     grid-template-columns: 1fr;
     max-width: 500px;
   }
-
-  .step-connector {
-    display: none;
-  }
-
+  .step-connector { display: none; }
   .step {
     text-align: left;
     display: grid;
@@ -38,17 +41,25 @@
     align-items: start;
     padding: 20px 0;
   }
+  .step__number { margin-bottom: 0; }
 
-  .step__number {
-    margin-bottom: 0;
+  .about__container {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
+  .about__avatar { order: -1; }
 
-  .contact {
+  .demo__container {
+    grid-template-columns: 1fr;
+  }
+  .demo__widget-wrapper { order: -1; }
+
+  .contact--landing,
+  .contact--home {
     grid-template-columns: 1fr;
     gap: 48px;
     max-width: 560px;
   }
-
   .contact__info {
     flex-direction: row;
     justify-content: space-around;
@@ -56,26 +67,13 @@
   }
 }
 
-/* Mobile devices */
+/* Mobile */
 @media (max-width: 768px) {
-  :root {
-    --header-h: 64px;
-  }
+  :root { --header-h: 64px; }
+  .container { padding: 0 20px; }
+  .section { padding: 72px 0; }
 
-  .container {
-    padding: 0 20px;
-  }
-
-  .section {
-    padding: 72px 0;
-  }
-
-  /* Nav toggle */
-  .nav__toggle {
-    display: block;
-    z-index: 1001;
-  }
-
+  .nav__toggle { display: block; z-index: 1001; }
   .nav__menu {
     position: fixed;
     top: 0;
@@ -92,163 +90,103 @@
     transition: right 0.3s ease;
     z-index: 1000;
   }
+  .nav__menu.is-open { right: 0; }
+  .nav__menu li { width: 100%; border-bottom: 1px solid var(--border); }
+  .nav__link { display: block; padding: 16px 0; font-size: 1.1rem; }
+  .nav__link::after { display: none; }
+  .btn--nav { display: none; }
 
-  .nav__menu.is-open {
-    right: 0;
-  }
+  .nav__toggle[aria-expanded="true"] .hamburger { background: transparent; }
+  .nav__toggle[aria-expanded="true"] .hamburger::before { top: 0; transform: rotate(45deg); }
+  .nav__toggle[aria-expanded="true"] .hamburger::after { top: 0; transform: rotate(-45deg); }
 
-  .nav__menu li {
-    width: 100%;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav__link {
-    display: block;
-    padding: 16px 0;
-    font-size: 1.1rem;
-  }
-
-  .nav__link::after {
-    display: none;
-  }
-
-  .btn--nav {
-    display: none;
-  }
-
-  /* Hamburger animation when open */
-  .nav__toggle[aria-expanded="true"] .hamburger {
-    background: transparent;
-  }
-
-  .nav__toggle[aria-expanded="true"] .hamburger::before {
-    top: 0;
-    transform: rotate(45deg);
-  }
-
-  .nav__toggle[aria-expanded="true"] .hamburger::after {
-    top: 0;
-    transform: rotate(-45deg);
-  }
-
-  /* Hero */
-  .hero__container {
+  .hero--landing .hero__container,
+  .hero--home .hero__container {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 48px;
   }
+  .hero--landing .hero__content,
+  .hero--home .hero__content { order: 1; }
+  .hero--landing .hero__visual,
+  .hero--home .hero__avatar { order: 0; }
+  .hero--landing .hero__subtitle,
+  .hero--home .hero__subtitle { margin-left: auto; margin-right: auto; }
+  .hero--landing .hero__cta,
+  .hero--home .hero__cta { justify-content: center; }
 
-  .hero__content {
-    order: 1;
-  }
+  .chat-mockup { max-width: 320px; }
 
-  .hero__visual {
-    order: 0;
-  }
-
-  .hero__subtitle {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero__cta {
-    justify-content: center;
-  }
-
-  .chat-mockup {
-    max-width: 320px;
-  }
-
-  /* Features & Services */
   .features,
-  .services {
+  .services,
+  .projects {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
   }
-
   .feature-card:last-child,
-  .service-card:last-child {
+  .service-card:last-child,
+  .project-card:last-child {
     grid-column: auto;
     max-width: none;
   }
 
-  /* Steps */
   .step {
     grid-template-columns: 1fr;
     text-align: center;
     gap: 12px;
     padding: 24px 0;
   }
+  .step__number { margin: 0 auto; }
 
-  .step__number {
-    margin: 0 auto;
-  }
+  .about__stats { grid-template-columns: 1fr; }
 
-  /* Contact */
-  .contact__info {
-    flex-direction: column;
-    gap: 24px;
-  }
+  .contact__info { flex-direction: column; gap: 24px; }
+  .contact__form { padding: 28px; }
 
-  .contact__form {
-    padding: 28px;
-  }
-
-  /* Footer */
   .footer__container {
     flex-direction: column;
     text-align: center;
     gap: 8px;
   }
 
-  /* WhatsApp float */
   .whatsapp-float {
     width: 54px;
     height: 54px;
     bottom: 20px;
     right: 20px;
   }
+
+  .bot-widget {
+    bottom: 20px;
+    left: 20px;
+  }
+  .bot-widget__panel {
+    width: calc(100vw - 40px);
+    max-width: 360px;
+    left: 0;
+    bottom: 72px;
+  }
+
+  .bot-embedded { height: 420px; }
 }
 
-/* Small mobile adjustments */
+/* Small mobile */
 @media (max-width: 380px) {
-  .hero__title {
-    font-size: 2rem;
-  }
-
-  .btn {
-    padding: 12px 20px;
-    font-size: 0.9rem;
-  }
-
-  .chat-mockup {
-    padding: 16px;
-  }
-
-  .feature-card,
-  .service-card,
-  .contact__form {
-    padding: 28px 20px;
-  }
+  .hero--landing .hero__title,
+  .hero--home .hero__title { font-size: 2rem; }
+  .btn { padding: 12px 20px; font-size: 0.9rem; }
+  .chat-mockup { padding: 16px; }
+  .feature-card, .service-card, .project-card, .contact__form { padding: 28px 20px; }
 }
 
-/* Reduced motion preference */
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  [data-animate="fade-up"] {
-    opacity: 1;
-    transform: none;
-  }
+  html { scroll-behavior: auto; }
+  [data-animate="fade-up"] { opacity: 1; transform: none; }
 }
