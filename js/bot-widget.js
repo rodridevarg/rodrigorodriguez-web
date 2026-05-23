@@ -14,27 +14,27 @@
     {
       keywords: ['precio', 'precios', 'cuanto', 'cuesta', 'costo', 'valor', 'plan', 'planes'],
       response: 'Los planes varían según el tamaño de tu tienda:\n\n• **Básico**: Ideal para empezar, hasta 500 conversaciones/mes.\n• **Pro**: Para tiendas en crecimiento, conversaciones ilimitadas + soporte prioritario.\n• **Enterprise**: Solución a medida con integraciones avanzadas.\n\n¿Querés que prepare una propuesta personalizada para tu negocio?',
-      cta: { text: 'Solicitar presupuesto', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20un%20presupuesto%20para%20el%20Bot%20de%20WhatsApp' }
+      cta: { text: 'Solicitar presupuesto', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20un%20presupuesto%20para%20la%20Secretaria%20Virtual' }
     },
     {
       keywords: ['funciona', 'como', 'cómo', 'funcionamiento', 'proceso', 'implementación', 'instalar'],
       response: 'El proceso es súper simple:\n\n1️⃣ **Conectamos tu tienda** (WooCommerce, Shopify, TiendaNube, etc.)\n2️⃣ **Configuramos el bot** con tus productos, precios y políticas\n3️⃣ **Empezás a vender automáticamente** 24/7\n\nLa implementación tarda entre 3 y 7 días hábiles.',
-      cta: { text: 'Quiero mi bot', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20Bot%20de%20WhatsApp' }
+      cta: { text: 'Quiero mi Secretaria Virtual', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual' }
     },
     {
       keywords: ['tienda', 'plataforma', 'shopify', 'woocommerce', 'tiendanube', 'integra', 'integración', 'soporta'],
-      response: 'El bot se integra con las principales plataformas:\n\n✅ WooCommerce\n✅ Shopify\n✅ TiendaNube\n✅ MercadoLibre\n✅ Y cualquier sistema que tenga API o webhooks\n\nSi usás otra plataforma, consultame que seguramente se puede integrar.',
+      response: 'La Secretaria Virtual se integra con las principales plataformas:\n\n✅ WooCommerce\n✅ Shopify\n✅ TiendaNube\n✅ MercadoLibre\n✅ Y cualquier sistema que tenga API o webhooks\n\nSi usás otra plataforma, consultame que seguramente se puede integrar.',
       cta: { text: 'Consultar integración', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20sobre%20integraciones' }
     },
     {
       keywords: ['whatsapp', 'contacto', 'hablar', 'rodrigo', 'humano', 'persona', 'agente'],
       response: 'Perfecto, te conecto con Rodrigo directamente. Hablale por WhatsApp y en minutos te responde con toda la info que necesitás.',
-      cta: { text: 'Hablar con Rodrigo', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20Bot%20de%20WhatsApp' }
+      cta: { text: 'Hablar con Rodrigo', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual' }
     },
     {
       keywords: ['demo', 'probar', 'ejemplo', 'test', 'prueba'],
-      response: '¡Esta conversación es una demo! 😄\n\nEn la landing completa del producto hay más info, capturas y detalles técnicos.',
-      cta: { text: 'Ver landing completa', href: '/bot/' }
+      response: '¡Esta conversación es una demo! 😄\n\nArriba en la página tenés más info sobre beneficios y cómo funciona la Secretaria Virtual.',
+      cta: { text: 'Ver beneficios', href: '#beneficios' }
     },
     {
       keywords: ['hola', 'buenas', 'hey', 'hi', 'saludos'],
@@ -65,8 +65,8 @@
 
     // Default fallback
     return {
-      response: 'Entiendo. Para darte la mejor info, ¿querés que Rodrigo te contacte directamente? También podés ver la landing completa del producto.',
-      cta: { text: 'Hablar con Rodrigo', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20Bot%20de%20WhatsApp' },
+      response: 'Entiendo. Para darte la mejor info, ¿querés que Rodrigo te contacte directamente? También podés ver los beneficios de la Secretaria Virtual arriba en la página.',
+      cta: { text: 'Hablar con Rodrigo', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual' },
       fallback: true
     };
   }
@@ -163,7 +163,7 @@
 
     // Initial greeting
     setTimeout(function () {
-      self.addBotMessage('¡Hola! 👋 Soy la demo del asistente de Rodrigo.\n\n¿Te interesa automatizar tu tienda con WhatsApp? Te cuento cómo funciona en 30 segundos.', SUGGESTIONS);
+      self.addBotMessage('¡Hola! 👋 Soy la demo de la Secretaria Virtual de Rodrigo.\n\n¿Te interesa automatizar la atención de tu negocio por WhatsApp? Te cuento cómo funciona en 30 segundos.', SUGGESTIONS);
     }, this.isEmbedded ? 800 : 1200);
   };
 

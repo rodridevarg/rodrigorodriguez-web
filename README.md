@@ -1,6 +1,6 @@
 # rodrigorodriguez.com.ar
 
-Web personal de Rodrigo Rodriguez - Desarrollador especializado en automatización y Bot de WhatsApp para tiendas virtuales.
+Web personal de Rodrigo Rodriguez - Desarrollador especializado en automatización y Secretaria Virtual para negocios.
 
 ## 🚀 Deploy en GitHub Pages
 
