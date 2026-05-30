@@ -155,6 +155,11 @@
 
   .about__stats { grid-template-columns: 1fr; }
 
+  .section--cta .section__cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
   .contact__info { flex-direction: column; gap: 24px; }
   .contact__form { padding: 28px; }
 

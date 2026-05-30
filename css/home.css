@@ -95,6 +95,14 @@
   background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%);
 }
 
+/* CTA Section */
+.section--cta {
+  background: linear-gradient(180deg, rgba(0,168,107,0.05) 0%, var(--bg-body) 50%, rgba(0,168,107,0.03) 100%);
+}
+.section--cta .section__cta {
+  margin-top: 40px;
+}
+
 /* Why choose me section */
 .section--why {
   background: var(--bg-body);
