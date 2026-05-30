@@ -16,8 +16,15 @@
 
   .features,
   .services,
-  .projects {
+  .projects,
+  .pricing {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-card--featured {
+    transform: scale(1);
+  }
+  .pricing-card--featured:hover {
+    transform: scale(1) translateY(-6px);
   }
 
   .feature-card:last-child,
@@ -119,7 +126,8 @@
 
   .features,
   .services,
-  .projects {
+  .projects,
+  .pricing {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
