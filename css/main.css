@@ -130,7 +130,7 @@
 }
 
 .nav__toggle {
-  display: none;
+  display: block;
   background: none;
   border: none;
   cursor: pointer;
@@ -159,12 +159,12 @@
 
 /* Sections base */
 .section {
-  padding: 100px 0;
+  padding: 72px 0;
 }
 .section__header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 64px;
+  margin: 0 auto 40px;
 }
 .section__label {
   display: inline-block;
@@ -189,7 +189,7 @@
 }
 .section__cta {
   text-align: center;
-  margin-top: 48px;
+  margin-top: 32px;
 }
 
 /* Contact shared */
@@ -223,7 +223,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 40px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -278,9 +278,11 @@
 }
 .footer__container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
+  text-align: center;
 }
 .footer__copy,
 .footer__made {
@@ -291,10 +293,10 @@
 /* WhatsApp float */
 .whatsapp-float {
   position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 60px;
-  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  width: 54px;
+  height: 54px;
   background: #25D366;
   color: #fff;
   border-radius: 50%;
