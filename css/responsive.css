@@ -126,8 +126,7 @@
 
   .features,
   .services,
-  .projects,
-  .pricing {
+  .projects {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
@@ -137,6 +136,13 @@
   .project-card:last-child {
     grid-column: auto;
     max-width: none;
+  }
+
+  /* Pricing stays 2 columns on tablets, collapses to 1 only below 640px */
+  .pricing {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .step {
@@ -177,6 +183,15 @@
   }
 
   .bot-embedded { height: 420px; }
+}
+
+/* Pricing specific - only collapse to 1 column on very small screens */
+@media (max-width: 640px) {
+  .pricing {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
 }
 
 /* Small mobile */
