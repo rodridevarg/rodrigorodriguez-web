@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Secretaria Virtual para Negocios | Rodrigo Rodriguez</title>
-  <meta name="description" content="Automatizá tu atención con una Secretaria Virtual por WhatsApp. Atención 24/7, más ventas y menos trabajo. Para tiendas y profesionales." />
+  <title>Secretaria Virtual para Médicos y Consultorios | Reduce inasistencias 24/7</title>
+  <meta name="description" content="Atendé pacientes por WhatsApp automáticamente. Confirmá turnos, respondé FAQs médicas y reducí inasistencias. Demo gratuita de 5 días para médicos y consultorios." />
   <meta name="author" content="Rodrigo Rodriguez" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0B0C10" />
@@ -12,18 +12,18 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rodrigorodriguez.com.ar/" />
-  <meta property="og:title" content="Secretaria Virtual para Negocios | Rodrigo Rodriguez" />
-  <meta property="og:description" content="Automatizá tu atención con una Secretaria Virtual por WhatsApp. Atención 24/7, más ventas y menos trabajo." />
+  <meta property="og:title" content="Secretaria Virtual para Médicos y Consultorios | Reduce inasistencias 24/7" />
+  <meta property="og:description" content="Atendé pacientes por WhatsApp automáticamente. Confirmá turnos, respondé FAQs y reducí inasistencias. Demo gratuita de 5 días." />
   <meta property="og:image" content="https://rodrigorodriguez.com.ar/assets/og-home.jpg" />
   <meta property="og:locale" content="es_AR" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://rodrigorodriguez.com.ar/" />
-  <meta name="twitter:title" content="Secretaria Virtual para Negocios | Rodrigo Rodriguez" />
-  <meta name="twitter:description" content="Automatizá tu atención con una Secretaria Virtual por WhatsApp. Atención 24/7, más ventas y menos trabajo." />
+  <meta name="twitter:title" content="Secretaria Virtual para Médicos y Consultorios | Reduce inasistencias 24/7" />
+  <meta name="twitter:description" content="Atendé pacientes por WhatsApp automáticamente. Confirmá turnos, respondé FAQs y reducí inasistencias. Demo gratuita de 5 días." />
   <meta name="twitter:image" content="https://rodrigorodriguez.com.ar/assets/og-home.jpg" />
 
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -60,6 +60,55 @@
   <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/bot-landing.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Estilos adicionales para secciones médicas -->
+  <style>
+    .section--problems { background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%); }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 48px auto 0;
+      text-align: center;
+    }
+    .stat-item__number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-item__label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    .urgency-badge {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-top: 16px;
+    }
+    @media (max-width: 767px) {
+      .stats-row { grid-template-columns: 1fr; gap: 16px; }
+    }
+    .demo-prompts {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .demo-prompts li {
+      list-style: disc;
+      margin-bottom: 4px;
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
@@ -76,15 +125,14 @@
 
       <ul class="nav__menu" id="navMenu">
         <li><a href="#hero" class="nav__link">Inicio</a></li>
-        <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+        <li><a href="#problemas" class="nav__link">Problemas</a></li>
         <li><a href="#beneficios" class="nav__link">Beneficios</a></li>
         <li><a href="#como-funciona" class="nav__link">¿Cómo funciona?</a></li>
-        <li><a href="#precios" class="nav__link">Precios</a></li>
         <li><a href="#contacto" class="nav__link">Contacto</a></li>
       </ul>
       <div class="nav-overlay" id="navOverlay" hidden></div>
 
-      <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="btn btn--small btn--nav" target="_blank" rel="noopener noreferrer" data-track="contact">Hablame</a>
+      <a href="#contacto" class="btn btn--small btn--nav" data-track="lead">Pedir demo gratis</a>
     </nav>
   </header>
 
@@ -93,31 +141,77 @@
     <section class="hero--landing" id="hero" aria-label="Presentación principal">
       <div class="container hero__container">
         <div class="hero__content">
-          <span class="hero__pretitle">Rodrigo Rodriguez — Especialista en automatización para negocios</span>
-          <h1 class="hero__title">Vendé más con una Secretaria Virtual para tu negocio</h1>
-          <p class="hero__subtitle">Atendé clientes, respondé preguntas y cerrá ventas automáticamente 24/7. Sin necesidad de saber tecnología.</p>
-          <p class="hero__price" style="margin-top: 12px; font-size: 1rem; color: var(--accent); font-weight: 600;">Desde $80.000 ARS/mes · Demo gratuita de 5 días</p>
+          <span class="hero__pretitle">Rodrigo Rodriguez — Especialista en automatización para consultorios médicos</span>
+          <h1 class="hero__title">Dejá de perder pacientes por no atender WhatsApp</h1>
+          <p class="hero__subtitle">Tu Secretaria Virtual confirma turnos, responde preguntas frecuentes y reduce inasistencias automáticamente. Funciona 24/7 mientras vos atendés o descansás.</p>
+          <p class="hero__price" style="margin-top: 16px; font-size: 1rem; color: var(--accent); font-weight: 600;">
+            Demo gratuita de 5 días · Sin tarjeta de crédito · Configuración incluida
+          </p>
           <div class="hero__cta">
-            <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-track="lead">
-              <span>Quiero mi Secretaria Virtual</span>
+            <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('hero_button')">
+              <span>Quiero mi demo gratuita</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
-            <a href="#como-funciona" class="btn btn--secondary">Ver cómo funciona</a>
+            <a href="#problemas" class="btn btn--secondary">Ver si me pasa esto</a>
           </div>
         </div>
         <div class="hero__visual" aria-hidden="true">
           <div class="chat-mockup">
-            <div class="chat-bubble chat-bubble--bot">¡Hola! 👋 Soy la Secretaria Virtual de tu negocio. ¿En qué puedo ayudarte hoy?</div>
-            <div class="chat-bubble chat-bubble--user">¿Tienen envíos a todo el país?</div>
-            <div class="chat-bubble chat-bubble--bot">Sí 🚚 Enviamos a todo Argentina. El costo depende de tu zona. ¿Querés que te calcule el envío?</div>
+            <div class="chat-bubble chat-bubble--bot">¡Hola! 👋 Soy la Secretaria Virtual del Dr. García. ¿En qué puedo ayudarte?</div>
+            <div class="chat-bubble chat-bubble--user">¿Atienden por OSDE?</div>
+            <div class="chat-bubble chat-bubble--bot">Sí, atendemos por OSDE, Swiss Medical y Galeno. ¿Querés que te busque un turno para esta semana?</div>
             <div class="chat-bubble chat-bubble--typing"><span></span><span></span><span></span></div>
           </div>
         </div>
       </div>
       <div class="hero__scroll">
-        <a href="#beneficios" class="scroll-indicator" aria-label="Desplazar hacia abajo">
+        <a href="#problemas" class="scroll-indicator" aria-label="Desplazar hacia abajo">
           <span class="scroll-indicator__mouse"><span class="scroll-indicator__wheel"></span></span>
         </a>
+      </div>
+    </section>
+
+    <!-- Problemas que solucionamos -->
+    <section class="section section--problems" id="problemas" aria-labelledby="problems-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label">Problemas que solucionamos</span>
+          <h2 id="problems-title" class="section__title">¿Te pasa alguna de estas situaciones en tu consultorio?</h2>
+          <p class="section__subtitle">Si respondés "sí" a alguna, tu consultorio necesita una Secretaria Virtual.</p>
+        </header>
+        <div class="features">
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <h3 class="feature-card__title">"Me despierto con 20 mensajes de pacientes"</h3>
+            <p class="feature-card__text">WhatsApp inundado a la mañana. Preguntas repetidas sobre obras sociales, horarios y dirección. Perdés tiempo valioso antes de empezar el día.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+            </div>
+            <h3 class="feature-card__title">"Tengo 15% de inasistencias todos los meses"</h3>
+            <p class="feature-card__text">Pacientes que no avisan que no van. Turnos perdidos = ingreso perdido. Una inasistencia menos por semana = $200 USD más al mes.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="feature-card__title">"Mi secretaria no da abasto"</h3>
+            <p class="feature-card__text">Atiende llamadas, confirma turnos, responde WhatsApp y atiende a quien llega. Está saturada. Y si falta un día, el caos es total.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3 class="feature-card__title">"Me escriben a la noche y no respondo hasta el otro día"</h3>
+            <p class="feature-card__text">El 40% de las consultas llegan fuera de horario. A la mañana, el paciente ya consiguió otro médico. Esa venta se perdió mientras dormías.</p>
+          </article>
+        </div>
+        <div class="section__cta" data-animate="fade-up">
+          <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('problems_section')">Quiero solucionar esto → Pedir demo gratis</a>
+        </div>
       </div>
     </section>
 
@@ -125,97 +219,58 @@
     <section class="section section--benefits" id="beneficios" aria-labelledby="benefits-title">
       <div class="container">
         <header class="section__header">
-          <span class="section__label">El Producto</span>
-          <h2 id="benefits-title" class="section__title">¿Por qué tu negocio necesita una Secretaria Virtual?</h2>
-          <p class="section__subtitle">El 70% de los clientes esperan una respuesta inmediata. Con tu Secretaria Virtual, nunca más perdás una venta por demora.</p>
+          <span class="section__label">Beneficios para tu consultorio</span>
+          <h2 id="benefits-title" class="section__title">Menos inasistencias. Más pacientes. Menos estrés.</h2>
         </header>
         <div class="features">
           <article class="feature-card" data-animate="fade-up">
             <div class="feature-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3 class="feature-card__title">Confirmación automática de turnos</h3>
+            <p class="feature-card__text">El bot envía recordatorio 24h antes por WhatsApp. El paciente confirma con un "sí". Bajás inasistencias un 60-70% sin levantar un dedo.</p>
+          </article>
+          <article class="feature-card" data-animate="fade-up">
+            <div class="feature-card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
-            <h3 class="feature-card__title">Atención 24/7</h3>
-            <p class="feature-card__text">Nunca pierdas una venta por no responder a tiempo. Tu Secretaria Virtual atiende clientes de día y de noche, incluso los fines de semana.</p>
+            <h3 class="feature-card__title">Respuestas instantáneas 24/7</h3>
+            <p class="feature-card__text">¿Obras sociales? ¿Horarios? ¿Dirección? ¿Preparación para estudios? El bot responde al instante. Vos atendés pacientes, no mensajes.</p>
           </article>
           <article class="feature-card" data-animate="fade-up">
             <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <h3 class="feature-card__title">Más ventas, menos trabajo</h3>
-            <p class="feature-card__text">Tu Secretaria Virtual responde por vos mientras hacés otras cosas. Tus clientes reciben respuesta inmediata y vos no perdés tiempo.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            </div>
-            <h3 class="feature-card__title">Funciona con lo que ya tenés</h3>
-            <p class="feature-card__text">WhatsApp, WooCommerce, Shopify, TiendaNube o el sistema que uses. No necesitás cambiar nada de tu negocio actual.</p>
+            <h3 class="feature-card__title">Capturá pacientes mientras dormís</h3>
+            <p class="feature-card__text">Un paciente escribe a las 11 PM preguntando por un turno. El bot le responde, le ofrece horarios y captura sus datos. A la mañana, tenés un lead caliente.</p>
           </article>
           <article class="feature-card" data-animate="fade-up">
             <div class="feature-card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3 class="feature-card__title">Panel de control propio</h3>
-            <p class="feature-card__text">Tomás el control cuando querés. Respondés vos mismo por WhatsApp desde el panel y el bot se calla. Ideal para leads calientes.</p>
+            <h3 class="feature-card__title">Tomás el control cuando querés</h3>
+            <p class="feature-card__text">Panel de administración para ver conversaciones. Cuando querés intervenir, apretás un botón y respondés vos. El bot se calla hasta que lo liberás.</p>
           </article>
         </div>
-        <div class="section__cta" data-animate="fade-up">
-          <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-track="contact">Consultar por mi Secretaria Virtual</a>
-        </div>
-      </div>
-    </section>
 
-    <!-- Para quien es -->
-    <section class="section section--niches" id="para-quien" aria-labelledby="niches-title">
-      <div class="container">
-        <header class="section__header">
-          <span class="section__label">Para quien es</span>
-          <h2 id="niches-title" class="section__title">Ideal para profesionales y negocios que venden por consulta</h2>
-          <p class="section__subtitle">Tu Secretaria Virtual atiende pacientes, clientes y prospectos mientras vos te enfocás en tu trabajo.</p>
-        </header>
-        <div class="features">
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-            </div>
-            <h3 class="feature-card__title">Medicos y consultorios</h3>
-            <p class="feature-card__text">Agenda turnos, responde preguntas frecuentes y confirma asistencias por WhatsApp. Reduce las inasistencias y libera a tu secretaria.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3 class="feature-card__title">Abogados y estudios juridicos</h3>
-            <p class="feature-card__text">Filtra consultas, agenda reuniones y responde sobre trámites, honorarios y documentación necesaria.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-            </div>
-            <h3 class="feature-card__title">Inmobiliarias</h3>
-            <p class="feature-card__text">Atiende consultas de propiedades, coordina visitas y envía catálogos automáticamente las 24 horas.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            </div>
-            <h3 class="feature-card__title">Tiendas online</h3>
-            <p class="feature-card__text">Responde sobre stock, envíos, talles y guía la compra paso a paso. Convierte chats en ventas.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11"/><path d="M6.5 17.5h11"/><path d="M6 20v-2a6 6 0 0 1 12 0v2"/></svg>
-            </div>
-            <h3 class="feature-card__title">Gimnasios y bienestar</h3>
-            <p class="feature-card__text">Confirma membresías, agenda clases, responde sobre planes y horarios. Sin saturar tu recepción.</p>
-          </article>
-          <article class="feature-card" data-animate="fade-up">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-            </div>
-            <h3 class="feature-card__title">Contadores y profesionales</h3>
-            <p class="feature-card__text">Agenda reuniones, responde sobre servicios y envía recordatorios de vencimientos e impuestos.</p>
-          </article>
+        <!-- Stats row -->
+        <div class="stats-row" data-animate="fade-up">
+          <div class="stat-item">
+            <div class="stat-item__number">60-70%</div>
+            <div class="stat-item__label">Reducción de inasistencias</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number">24/7</div>
+            <div class="stat-item__label">Atención automática</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__number">3-5 días</div>
+            <div class="stat-item__label">Tiempo de implementación</div>
+          </div>
+        </div>
+
+        <div class="section__cta" data-animate="fade-up">
+          <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('benefits_section')">Quiero estos resultados → Pedir demo gratis</a>
         </div>
       </div>
     </section>
@@ -225,57 +280,44 @@
       <div class="container">
         <header class="section__header">
           <span class="section__label">Proceso</span>
-          <h2 id="steps-title" class="section__title">¿Cómo funciona?</h2>
-          <p class="section__subtitle">Implementación simple, resultados inmediatos.</p>
+          <h2 id="steps-title" class="section__title">¿Cómo funciona para tu consultorio?</h2>
+          <p class="section__subtitle">Implementación simple, resultados inmediatos. Sin que vos tengas que saber de tecnología.</p>
         </header>
         <div class="steps">
           <article class="step" data-animate="fade-up">
             <span class="step__number" aria-hidden="true">01</span>
-            <h3 class="step__title">Hablás conmigo</h3>
-            <p class="step__text">Me contás sobre tu negocio. Es gratis y sin compromiso. Entiendo qué necesitás y cómo te contactan tus clientes.</p>
+            <div>
+              <h3 class="step__title">Agendamos una videollamada de 20 min</h3>
+              <p class="step__text">Entiendo tu especialidad, obras sociales, horarios y las preguntas que más te hacen. Es gratis y sin compromiso.</p>
+            </div>
           </article>
           <div class="step-connector" aria-hidden="true"></div>
           <article class="step" data-animate="fade-up">
             <span class="step__number" aria-hidden="true">02</span>
-            <h3 class="step__title">Armamos tu Secretaria Virtual</h3>
-            <p class="step__text">Configuro todo por vos en pocos días. Personalizo las respuestas para tu marca, productos y servicios. No necesitás saber de tecnología.</p>
+            <div>
+              <h3 class="step__title">Armamos tu Secretaria Virtual en 3-5 días</h3>
+              <p class="step__text">Configuro turnos, FAQs, precios y obras sociales. No necesitás saber tecnología. Yo me encargo de todo.</p>
+            </div>
           </article>
           <div class="step-connector" aria-hidden="true"></div>
           <article class="step" data-animate="fade-up">
             <span class="step__number" aria-hidden="true">03</span>
-            <h3 class="step__title">Probás gratis</h3>
-            <p class="step__text">Testeás tu Secretaria Virtual durante 3 a 5 días con tu información real. Sin pagar nada. Si te gusta, seguimos.</p>
+            <div>
+              <h3 class="step__title">Probás gratis con pacientes reales</h3>
+              <p class="step__text">Testeás 5 días con tu consultorio real. Vemos cómo responde, ajustamos lo necesario. Sin pagar nada.</p>
+            </div>
           </article>
           <div class="step-connector" aria-hidden="true"></div>
           <article class="step" data-animate="fade-up">
             <span class="step__number" aria-hidden="true">04</span>
-            <h3 class="step__title">Atendés 24/7</h3>
-            <p class="step__text">Tu Secretaria Virtual responde solo. Vos cerrás los leads calientes desde el panel de control cuando querés intervenir.</p>
+            <div>
+              <h3 class="step__title">Atendés 24/7 sin estrés</h3>
+              <p class="step__text">El bot confirma turnos, responde FAQs y captura datos. Vos solo cerrás los casos complejos desde el panel.</p>
+            </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <!-- ¿Por qué elegirme? -->
-    <section class="section section--why" id="por-que-elegirme" aria-labelledby="why-title">
-      <div class="container">
-        <header class="section__header">
-          <span class="section__label">Confianza</span>
-          <h2 id="why-title" class="section__title">¿Por qué elegirme?</h2>
-        </header>
-        <div class="services">
-          <article class="service-card" data-animate="fade-up">
-            <h3 class="service-card__title">Hecho a tu medida</h3>
-            <p class="service-card__text">Configuro tus productos, precios, servicios y tono de marca. Tu Secretaria Virtual suena como parte de tu equipo.</p>
-          </article>
-          <article class="service-card" data-animate="fade-up">
-            <h3 class="service-card__title">Soporte humano real</h3>
-            <p class="service-card__text">Soy yo el que te atiende, no un equipo enorme. Conocés a la persona que armó tu Secretaria Virtual y puede ayudarte cuando lo necesites.</p>
-          </article>
-          <article class="service-card" data-animate="fade-up">
-            <h3 class="service-card__title">Sin contratos largos</h3>
-            <p class="service-card__text">Podés probarlo sin riesgo. Sin letras chicas ni compromisos de por vida. Si no te sirve, no hay problema.</p>
-          </article>
+        <div class="section__cta" data-animate="fade-up">
+          <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('steps_section')">Quiero empezar → Pedir demo gratis</a>
         </div>
       </div>
     </section>
@@ -284,17 +326,18 @@
     <section class="section section--pricing" id="precios" aria-labelledby="pricing-title">
       <div class="container">
         <header class="section__header">
-          <span class="section__label">Planes</span>
-          <h2 id="pricing-title" class="section__title">Un plan para cada etapa de tu negocio</h2>
-          <p class="section__subtitle">Setup inicial + mensualidad. Sin contratos de por vida. Empezás con una demo gratuita.</p>
+          <span class="section__label">Inversión</span>
+          <h2 id="pricing-title" class="section__title">Una inversión que se paga sola</h2>
+          <p class="section__subtitle">Un solo turno recuperado por semana ya cubre el costo del servicio. Sin contratos. Sin letras chicas.</p>
         </header>
-        <div class="pricing" data-animate="fade-up">
-          <article class="pricing-card">
+        <div class="pricing" data-animate="fade-up" style="max-width: 480px; margin: 0 auto;">
+          <article class="pricing-card pricing-card--featured" style="max-width: 100%;">
+            <div class="pricing-card__badge">Demo gratuita incluida</div>
             <div class="pricing-card__header">
-              <div class="pricing-card__name">Básico</div>
-              <div class="pricing-card__desc">Para empezar a automatizar</div>
-              <div class="pricing-card__price">$80.000<span> ARS/mes</span></div>
-              <div class="pricing-card__setup">+ Setup $150.000 (único)</div>
+              <div class="pricing-card__name">Secretaria Virtual Médica</div>
+              <div class="pricing-card__desc">Todo incluido para tu consultorio</div>
+              <div class="pricing-card__price" style="font-size: 1.5rem; font-weight: 700;">Setup + Mensualidad</div>
+              <div class="pricing-card__setup" style="background: rgba(0,168,107,0.1); color: var(--accent); margin-top: 12px;">Te armo la propuesta personalizada en la demo</div>
             </div>
             <ul class="pricing-card__features">
               <li class="pricing-card__feature">
@@ -303,128 +346,59 @@
               </li>
               <li class="pricing-card__feature">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Hasta 5 documentos
+                Confirmación automática de turnos
               </li>
               <li class="pricing-card__feature">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Chat web incluido
+                Respuestas sobre obras sociales y FAQs
               </li>
               <li class="pricing-card__feature">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Soporte por email
+                Panel de control + Human handoff
               </li>
-              <li class="pricing-card__feature pricing-card__feature--disabled">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                Panel admin
+              <li class="pricing-card__feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Configuración personalizada incluida
               </li>
-              <li class="pricing-card__feature pricing-card__feature--disabled">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                Human handoff
+              <li class="pricing-card__feature">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                Soporte por WhatsApp con Rodrigo
               </li>
             </ul>
             <div class="pricing-card__cta">
-              <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20plan%20Basico" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Consultar plan Básico</a>
-            </div>
-          </article>
-
-          <article class="pricing-card pricing-card--featured">
-            <div class="pricing-card__badge">Más elegido</div>
-            <div class="pricing-card__header">
-              <div class="pricing-card__name">Pro</div>
-              <div class="pricing-card__desc">Para negocios que venden activamente</div>
-              <div class="pricing-card__price">$180.000<span> ARS/mes</span></div>
-              <div class="pricing-card__setup">+ Setup $300.000 (único)</div>
-            </div>
-            <ul class="pricing-card__features">
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Bot 24/7 por WhatsApp
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Hasta 10 documentos
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Panel de administración
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Human handoff (tomás el control)
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Soporte por WhatsApp
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Chat web + admin propio
-              </li>
-            </ul>
-            <div class="pricing-card__cta">
-              <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20plan%20Pro" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Consultar plan Pro</a>
-            </div>
-          </article>
-
-          <article class="pricing-card">
-            <div class="pricing-card__header">
-              <div class="pricing-card__name">Enterprise</div>
-              <div class="pricing-card__desc">Para equipos con alto volumen</div>
-              <div class="pricing-card__price">$350.000<span> ARS/mes</span></div>
-              <div class="pricing-card__setup">+ Setup $500.000 (único)</div>
-            </div>
-            <ul class="pricing-card__features">
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Todo lo del plan Pro
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Documentos ilimitados
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Reportes mensuales
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Ajustes ilimitados
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Soporte prioritario
-              </li>
-              <li class="pricing-card__feature">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Consultoría mensual
-              </li>
-            </ul>
-            <div class="pricing-card__cta">
-              <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20el%20plan%20Enterprise" class="btn btn--secondary" target="_blank" rel="noopener noreferrer">Consultar Enterprise</a>
+              <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('pricing_section')">Pedir mi demo gratuita de 5 días</a>
             </div>
           </article>
         </div>
-        <p class="pricing-note" data-animate="fade-up">Todos los planes incluyen <strong>demo gratuita de 3 a 5 días</strong> antes de contratar. Sin tarjeta de crédito.</p>
+        <p class="pricing-note" data-animate="fade-up">
+          <strong style="color: #ef4444;">Solo 3 demos disponibles esta semana.</strong> Sin tarjeta de crédito. Sin compromiso.
+        </p>
       </div>
     </section>
 
-    <!-- Demo -->
+    <!-- Demo interactiva -->
     <section class="section section--demo" id="demo" aria-labelledby="demo-title">
       <div class="container">
         <header class="section__header">
-          <span class="section__label">Demo interactiva</span>
-          <h2 id="demo-title" class="section__title">Probá antes de contratar</h2>
-          <p class="section__subtitle">Cada cliente arranca con una demo gratuita de 3 a 5 días usando la información real de su negocio. Sin compromiso.</p>
+          <span class="section__label">Probá antes de pagar</span>
+          <h2 id="demo-title" class="section__title">Viví la experiencia de tus pacientes</h2>
+          <p class="section__subtitle">Este bot está configurado como si fuera un consultorio médico real. Escribile como si fueras un paciente.</p>
         </header>
         <div class="demo__container">
           <div>
             <div class="demo__text">
-              <p>Esta es mi propia Secretaria Virtual. Responde preguntas sobre el servicio, precios y proceso. Si te interesa, armamos una demo igual pero con <strong>tu información</strong>: tus productos, precios, servicios y tono de marca.</p>
-              <p>La demo incluye tu propio dominio (<code>tu-negocio.asistentebot.com.ar</code>), tu bot entrenado con tus documentos y acceso al panel de control. Probalo, y si te gusta, elegís un plan.</p>
+              <p>Probá cómo respondería tu propia Secretaria Virtual. Este demo está configurado con información de un consultorio de cardiología: obras sociales, horarios, preparación para estudios y valores de consulta.</p>
+              <p><strong>Preguntale cosas como:</strong></p>
+              <ul class="demo-prompts">
+                <li>"¿Atienden por OSDE?"</li>
+                <li>"¿Cuánto cuesta la consulta?"</li>
+                <li>"¿Necesito turno para un electrocardiograma?"</li>
+                <li>"¿Están abiertos los sábados?"</li>
+              </ul>
             </div>
             <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="https://rodrigo.asistentebot.com.ar/chat" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Probar demo real</a>
-              <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20pedir%20una%20demo%20gratuita" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" data-track="contact">Pedir mi demo</a>
+              <a href="https://rodrigo.asistentebot.com.ar/chat" class="btn btn--primary" target="_blank" rel="noopener noreferrer" onclick="trackDemoClick('demo_widget_primary')">Probar demo real</a>
+              <a href="#contacto" class="btn btn--secondary" data-track="lead" onclick="trackDemoClick('demo_widget_secondary')">Quiero mi demo con mi consultorio</a>
             </div>
           </div>
           <div class="demo__widget-wrapper" data-animate="fade-up">
@@ -434,29 +408,12 @@
       </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="section section--cta" id="cta" aria-labelledby="cta-title">
-      <div class="container">
-        <header class="section__header">
-          <span class="section__label">Empezá hoy</span>
-          <h2 id="cta-title" class="section__title">¿Listo para vender mientras dormís?</h2>
-          <p class="section__subtitle">Tu negocio no puede esperar. Empezá con una demo gratuita y comprobá los resultados en 5 días.</p>
-        </header>
-        <div class="section__cta" data-animate="fade-up">
-          <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-track="lead">
-            <span>Quiero mi Secretaria Virtual</span>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
     <!-- Sobre mí -->
     <section class="section section--about" id="sobre-mi" aria-labelledby="about-title">
       <div class="container">
         <header class="section__header">
           <span class="section__label">Sobre mí</span>
-          <h2 id="about-title" class="section__title">De la curiosidad al código</h2>
+          <h2 id="about-title" class="section__title">Especialista en automatización para consultorios médicos</h2>
         </header>
         <div class="about__container">
           <div class="about__avatar">
@@ -466,12 +423,34 @@
           </div>
           <div>
             <div class="about__text">
-              <p>Soy Rodrigo. Hace más de 10 años ayudo a emprendedores y profesionales a vender más con tecnología simple. Creé la Secretaria Virtual porque vi que muchos negocios perdían clientes por no responder rápido. Vivo en Argentina y trabajo con negocios de toda Latinoamérica.</p>
+              <p>Soy Rodrigo. Hace más de 10 años ayudo a emprendedores y profesionales a vender más con tecnología simple. Creé la Secretaria Virtual para médicos porque vi que muchos consultorios perdían pacientes por no responder rápido.</p>
+              <p style="margin-top: 16px;">Mientras el doctor está atendiendo, operando o simplemente descansando, el paciente pregunta por WhatsApp y no recibe respuesta. Ese turno se pierde. Mi misión es que ningún consultorio pierda una oportunidad por demora.</p>
             </div>
             <div class="about__cta" style="margin-top: 24px; text-align: center;">
-              <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-track="contact">Hablemos de tu negocio</a>
+              <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('about_section')">Hablemos de tu consultorio</a>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="section section--cta" id="cta" aria-labelledby="cta-title">
+      <div class="container">
+        <header class="section__header">
+          <span class="section__label">No esperes más</span>
+          <h2 id="cta-title" class="section__title">Cada turno perdido es plata que no volvés a ver</h2>
+          <p class="section__subtitle">En 5 días de demo vas a ver cuántos pacientes dejás de perder. Sin costo. Sin compromiso. Sin tarjeta de crédito.</p>
+        </header>
+        <div class="section__cta" data-animate="fade-up">
+          <a href="#contacto" class="btn btn--primary" data-track="lead" style="font-size: 1.1rem; padding: 18px 36px;" onclick="trackDemoClick('final_cta')">
+            <span>Quiero mi demo gratuita ahora</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <p style="margin-top: 16px; font-size: 0.85rem; color: var(--text-secondary);">
+            📩 Te escribo en menos de 24 horas para coordinar.
+          </p>
+          <div class="urgency-badge">Solo 3 demos disponibles esta semana</div>
         </div>
       </div>
     </section>
@@ -480,36 +459,43 @@
     <section class="section section--contact" id="contacto" aria-labelledby="contact-title">
       <div class="container">
         <header class="section__header">
-          <span class="section__label">Contacto</span>
-          <h2 id="contact-title" class="section__title">Hablemos</h2>
-          <p class="section__subtitle">¿Listo para que tu negocio atienda solo? Escribime y arrancamos con una <strong>demo gratuita de 5 días</strong>. Sin pagar nada de antemano.</p>
+          <span class="section__label">Empezá hoy</span>
+          <h2 id="contact-title" class="section__title">Pedí tu demo gratuita de 5 días</h2>
+          <p class="section__subtitle">Completá el formulario y te contacto en menos de 24 horas para agendar la videollamada. Sin costo. Sin compromiso.</p>
         </header>
         <div class="contact contact--home">
-          <div class="contact__info" data-animate="fade-up">
-            <div class="contact__item">
-              <span class="contact__label">WhatsApp</span>
-              <a href="https://wa.me/5492477614405" class="contact__value" target="_blank" rel="noopener noreferrer">+54 9 2477 614405</a>
-            </div>
-            <div class="contact__item">
-              <span class="contact__label">Email</span>
-              <a href="mailto:rodrigo.desarrollador@gmail.com" class="contact__value">rodrigo.desarrollador@gmail.com</a>
-            </div>
-          </div>
-          <form class="contact__form" action="https://formspree.io/f/rodrigo.desarrollador@gmail.com" method="POST" data-animate="fade-up" data-track-form="lead">
+          <form class="contact__form" action="https://formspree.io/f/rodrigo.desarrollador@gmail.com" method="POST" data-track-form="lead">
             <div class="form__group">
-              <label for="name" class="form__label">Nombre</label>
-              <input type="text" id="name" name="name" class="form__input" placeholder="Tu nombre" autocomplete="name" required />
+              <label for="name" class="form__label">Nombre y apellido *</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Dr. Juan Pérez" autocomplete="name" required />
             </div>
             <div class="form__group">
-              <label for="email" class="form__label">Email</label>
-              <input type="email" id="email" name="email" class="form__input" placeholder="tu@email.com" autocomplete="email" required />
+              <label for="especialidad" class="form__label">Especialidad *</label>
+              <input type="text" id="especialidad" name="especialidad" class="form__input" placeholder="Ej: Cardiología, Pediatría, Traumatología" required />
             </div>
             <div class="form__group">
-              <label for="message" class="form__label">Mensaje</label>
-              <textarea id="message" name="message" class="form__input form__input--textarea" rows="5" placeholder="Contame sobre tu negocio..." autocomplete="off" required></textarea>
+              <label for="whatsapp" class="form__label">WhatsApp (para coordinar la demo) *</label>
+              <input type="tel" id="whatsapp" name="whatsapp" class="form__input" placeholder="+54 9 11 1234-5678" required />
             </div>
-            <button type="submit" class="btn btn--primary btn--block">Enviar mensaje</button>
-            <p class="form__note">También podés escribirme directo por <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" target="_blank" rel="noopener noreferrer" data-track="contact">WhatsApp</a>.</p>
+            <div class="form__group">
+              <label for="turnos" class="form__label">¿Cuántos turnos atendés por semana aproximadamente?</label>
+              <select id="turnos" name="turnos" class="form__input">
+                <option value="">Seleccionar...</option>
+                <option value="1-10">1 a 10 turnos</option>
+                <option value="11-30">11 a 30 turnos</option>
+                <option value="31-50">31 a 50 turnos</option>
+                <option value="50+">Más de 50 turnos</option>
+              </select>
+            </div>
+            <div class="form__group">
+              <label for="mensaje" class="form__label">¿Qué problema querés solucionar? (opcional)</label>
+              <textarea id="mensaje" name="mensaje" class="form__input form__input--textarea" rows="3" placeholder="Ej: Tengo muchas inasistencias, mi secretaria no da abasto, me escriben a deshoras..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block" onclick="trackFormSubmit()">Quiero mi demo gratuita</button>
+            <p class="form__note" style="text-align: center; margin-top: 16px;">
+              🔒 Tu información es confidencial. Solo la uso para armar tu demo personalizada.<br/>
+              También podés escribirme directo por <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20soy%20medico%20y%20quiero%20pedir%20una%20demo%20gratuita%20para%20mi%20consultorio" target="_blank" rel="noopener noreferrer" data-track="contact" onclick="trackWhatsAppClick()">WhatsApp</a>.
+            </p>
           </form>
         </div>
       </div>
@@ -523,12 +509,39 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20quiero%20consultar%20por%20la%20Secretaria%20Virtual" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Enviar mensaje por WhatsApp" data-track="contact">
+  <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20soy%20medico%20y%20quiero%20pedir%20una%20demo%20gratuita%20para%20mi%20consultorio" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Pedir demo por WhatsApp" data-track="contact" onclick="trackWhatsAppClick()">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
   </a>
 
   <script src="js/main.js"></script>
   <script src="js/home.js"></script>
   <script src="js/bot-widget.js"></script>
+
+  <!-- Tracking functions -->
+  <script>
+    function trackDemoClick(location) {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { location: location });
+      if (typeof gtag !== 'undefined') gtag('event', 'click_demo', {
+        'event_category': 'conversion',
+        'event_label': location
+      });
+    }
+
+    function trackFormSubmit() {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { source: 'contact_form' });
+      if (typeof gtag !== 'undefined') gtag('event', 'submit_demo_form', {
+        'event_category': 'conversion',
+        'event_label': 'contact_form'
+      });
+    }
+
+    function trackWhatsAppClick() {
+      if (typeof fbq !== 'undefined') fbq('track', 'Contact', { source: 'whatsapp' });
+      if (typeof gtag !== 'undefined') gtag('event', 'click_whatsapp', {
+        'event_category': 'engagement',
+        'event_label': 'whatsapp_float'
+      });
+    }
+  </script>
 </body>
 </html>

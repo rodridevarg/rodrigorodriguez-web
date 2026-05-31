@@ -5,6 +5,41 @@
 (function () {
   'use strict';
 
+  /* Scroll depth tracking */
+  let scrollTracked = { 25: false, 50: false, 75: false, 90: false };
+  function trackScrollDepth() {
+    const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 90].forEach(function (pct) {
+      if (scrollPercent >= pct && !scrollTracked[pct]) {
+        scrollTracked[pct] = true;
+        if (typeof gtag !== 'undefined') gtag('event', 'scroll_' + pct + '_percent', {
+          'event_category': 'engagement',
+          'event_label': 'scroll_depth'
+        });
+      }
+    });
+  }
+  window.addEventListener('scroll', trackScrollDepth, { passive: true });
+
+  /* Section visibility tracking */
+  const sectionsToTrack = ['#problemas', '#beneficios', '#testimonios', '#contacto'];
+  const sectionObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        if (typeof gtag !== 'undefined') gtag('event', 'view_section_' + id, {
+          'event_category': 'engagement',
+          'event_label': 'section_view'
+        });
+        sectionObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  sectionsToTrack.forEach(function (sel) {
+    const el = document.querySelector(sel);
+    if (el) sectionObserver.observe(el);
+  });
+
   /* Typing effect for hero subtitle */
   const typingElement = document.querySelector('[data-typing]');
   if (typingElement) {

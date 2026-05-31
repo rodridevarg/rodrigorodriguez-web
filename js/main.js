@@ -74,7 +74,7 @@
         btn.textContent = 'Enviando...';
         btn.disabled = true;
         setTimeout(function () {
-          btn.textContent = 'Enviar mensaje';
+          btn.textContent = 'Quiero mi demo gratuita';
           btn.disabled = false;
         }, 4000);
       }
