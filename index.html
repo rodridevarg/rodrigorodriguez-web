@@ -8,7 +8,13 @@
   <meta name="author" content="Rodrigo Rodriguez" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0B0C10" />
+  <meta name="msapplication-TileColor" content="#0B0C10" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Secretaria Virtual Médica" />
+  <meta name="format-detection" content="telephone=no" />
   <link rel="canonical" href="https://rodrigorodriguez.com.ar/" />
+  <link rel="manifest" href="manifest.json" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rodrigorodriguez.com.ar/" />
@@ -23,9 +29,64 @@
   <meta name="twitter:description" content="Atendé pacientes por WhatsApp automáticamente. Confirmá turnos, respondé FAQs y reducí inasistencias. Demo gratuita de 5 días." />
   <meta name="twitter:image" content="https://rodrigorodriguez.com.ar/assets/og-home.jpg" />
 
+  <!-- SEO Extra -->
+  <meta name="keywords" content="secretaria virtual médicos, bot whatsapp consultorios, reducir inasistencias turnos, automatización atención médica, chatbot médico argentina" />
+  <meta name="geo.region" content="AR" />
+  <meta name="geo.placename" content="Argentina" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit-after" content="7 days" />
+
+  <!-- Structured Data: LocalBusiness + Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Rodrigo Rodriguez - Secretaria Virtual para Médicos",
+    "description": "Atendé pacientes por WhatsApp automáticamente. Confirmá turnos, respondé FAQs y reducí inasistencias. Demo gratuita de 5 días.",
+    "url": "https://rodrigorodriguez.com.ar",
+    "telephone": "+54-9-2477-614405",
+    "email": "rodrigo.desarrollador@gmail.com",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "AR"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Argentina"
+    },
+    "serviceType": ["Automatización WhatsApp para consultorios médicos", "Chatbot médico", "Confirmación automática de turnos"],
+    "offers": {
+      "@type": "Offer",
+      "name": "Demo gratuita Secretaria Virtual Médica",
+      "description": "Demo gratuita de 5 días para consultorios médicos. Sin tarjeta de crédito.",
+      "price": "0",
+      "priceCurrency": "ARS",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "reviewCount": "1"
+    }
+  }
+  </script>
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏥</text></svg>" />
+
+  <!-- Performance: Preconnect critical domains -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+  <link rel="dns-prefetch" href="https://connect.facebook.net" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload critical CSS -->
+  <link rel="preload" href="css/base.css" as="style" />
+  <link rel="preload" href="css/main.css" as="style" />
+
+  <!-- Font with display=swap to avoid FOIT -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Google tag (gtag.js) -->
@@ -140,7 +201,70 @@
       list-style: disc;
       margin-bottom: 4px;
     }
+    /* Hero video background */
+    .hero--video {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero__video-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      opacity: 0.55;
+    }
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(11,12,16,0.92) 0%, rgba(11,12,16,0.75) 40%, rgba(11,12,16,0.88) 100%);
+      z-index: 1;
+    }
+    .hero__content-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+    .hero__scroll {
+      position: relative;
+      z-index: 2;
+    }
+    /* Noscript fallback */
+    noscript .hero__video-bg { display: none; }
+    noscript .hero__overlay { background: rgba(11,12,16,0.95); }
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .hero__video-bg { display: none; }
+      .hero__overlay { background: rgba(11,12,16,0.95); }
+    }
+    .hero__price {
+      margin-top: 16px;
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    /* Trust badge */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 12px;
+    }
+    .trust-badge svg {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
   </style>
+
+  <noscript>
+    <style>
+      .hero__video-bg { display: none !important; }
+      .hero__overlay { background: rgba(11,12,16,0.95) !important; }
+    </style>
+  </noscript>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Saltar al contenido</a>
@@ -170,25 +294,22 @@
 
   <main id="main-content">
     <!-- Hero con video de fondo -->
-    <section class="hero--landing hero--video" id="hero" aria-label="Presentación principal" style="position: relative; overflow: hidden;">
+    <section class="hero--landing hero--video" id="hero" aria-label="Presentación principal">
       <!-- Video de fondo -->
-      <video autoplay muted loop playsinline
-             poster="assets/hero-poster.jpg"
-             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.55;">
+      <video class="hero__video-bg" autoplay muted loop playsinline
+             poster="assets/hero-poster.jpg">
         <source src="assets/emocional.mp4" type="video/mp4">
       </video>
 
       <!-- Overlay oscuro + gradiente para legibilidad del texto -->
-      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,12,16,0.92) 0%, rgba(11,12,16,0.75) 40%, rgba(11,12,16,0.88) 100%); z-index: 1;"></div>
+      <div class="hero__overlay"></div>
 
-      <div class="container hero__container" style="position: relative; z-index: 2;">
+      <div class="container hero__container hero__content-wrapper">
         <div class="hero__content">
           <span class="hero__pretitle">Rodrigo Rodriguez — Especialista en automatización para consultorios médicos</span>
           <h1 class="hero__title">Dejá de perder pacientes por no atender WhatsApp</h1>
           <p class="hero__subtitle">Tu Secretaria Virtual confirma turnos, responde preguntas frecuentes y reduce inasistencias automáticamente. Funciona 24/7 mientras vos atendés o descansás.</p>
-          <p class="hero__price" style="margin-top: 16px; font-size: 1rem; color: var(--accent); font-weight: 600;">
-            Demo gratuita de 5 días · Sin tarjeta de crédito · Configuración incluida
-          </p>
+          <p class="hero__price">Demo gratuita de 5 días · Sin tarjeta de crédito · Configuración incluida</p>
           <div class="hero__cta">
             <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('hero_button')">
               <span>Quiero mi demo gratuita</span>
@@ -196,9 +317,14 @@
             </a>
             <a href="#problemas" class="btn btn--secondary">Ver si me pasa esto</a>
           </div>
+          <!-- Trust microcopy -->
+          <div class="trust-badge">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            Sin contratos · Configuración incluida · Soporte humano
+          </div>
         </div>
       </div>
-      <div class="hero__scroll" style="position: relative; z-index: 2;">
+      <div class="hero__scroll">
         <a href="#problemas" class="scroll-indicator" aria-label="Desplazar hacia abajo">
           <span class="scroll-indicator__mouse"><span class="scroll-indicator__wheel"></span></span>
         </a>
@@ -452,7 +578,7 @@
         <div class="about__container">
           <div class="about__avatar">
             <div class="avatar">
-              <img src="assets/perfil.jpeg" alt="Rodrigo Rodriguez" class="avatar__img" />
+              <img src="assets/perfil.jpeg" alt="Rodrigo Rodriguez" class="avatar__img" loading="lazy" width="280" height="280" />
             </div>
           </div>
           <div>
