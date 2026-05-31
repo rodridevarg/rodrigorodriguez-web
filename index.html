@@ -64,6 +64,38 @@
   <!-- Estilos adicionales para secciones médicas -->
   <style>
     .section--problems { background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%); }
+    /* Hero con video: ajustes para texto centrado sin columna derecha */
+    .hero--video .hero__container {
+      grid-template-columns: 1fr !important;
+      text-align: center;
+      gap: 0;
+    }
+    .hero--video .hero__content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .hero--video .hero__subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero--video .hero__cta {
+      justify-content: center;
+    }
+    @media (min-width: 1024px) {
+      .hero--video .hero__container {
+        text-align: left;
+      }
+      .hero--video .hero__content {
+        margin: 0;
+      }
+      .hero--video .hero__subtitle {
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .hero--video .hero__cta {
+        justify-content: flex-start;
+      }
+    }
     .stats-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -137,9 +169,19 @@
   </header>
 
   <main id="main-content">
-    <!-- Hero -->
-    <section class="hero--landing" id="hero" aria-label="Presentación principal">
-      <div class="container hero__container">
+    <!-- Hero con video de fondo -->
+    <section class="hero--landing hero--video" id="hero" aria-label="Presentación principal" style="position: relative; overflow: hidden;">
+      <!-- Video de fondo -->
+      <video autoplay muted loop playsinline
+             poster="assets/hero-poster.jpg"
+             style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.55;">
+        <source src="assets/hero-medical.mp4" type="video/mp4">
+      </video>
+
+      <!-- Overlay oscuro + gradiente para legibilidad del texto -->
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(11,12,16,0.92) 0%, rgba(11,12,16,0.75) 40%, rgba(11,12,16,0.88) 100%); z-index: 1;"></div>
+
+      <div class="container hero__container" style="position: relative; z-index: 2;">
         <div class="hero__content">
           <span class="hero__pretitle">Rodrigo Rodriguez — Especialista en automatización para consultorios médicos</span>
           <h1 class="hero__title">Dejá de perder pacientes por no atender WhatsApp</h1>
@@ -155,16 +197,8 @@
             <a href="#problemas" class="btn btn--secondary">Ver si me pasa esto</a>
           </div>
         </div>
-        <div class="hero__visual" aria-hidden="true">
-          <div class="chat-mockup">
-            <div class="chat-bubble chat-bubble--bot">¡Hola! 👋 Soy la Secretaria Virtual del Dr. García. ¿En qué puedo ayudarte?</div>
-            <div class="chat-bubble chat-bubble--user">¿Atienden por OSDE?</div>
-            <div class="chat-bubble chat-bubble--bot">Sí, atendemos por OSDE, Swiss Medical y Galeno. ¿Querés que te busque un turno para esta semana?</div>
-            <div class="chat-bubble chat-bubble--typing"><span></span><span></span><span></span></div>
-          </div>
-        </div>
       </div>
-      <div class="hero__scroll">
+      <div class="hero__scroll" style="position: relative; z-index: 2;">
         <a href="#problemas" class="scroll-indicator" aria-label="Desplazar hacia abajo">
           <span class="scroll-indicator__mouse"><span class="scroll-indicator__wheel"></span></span>
         </a>
