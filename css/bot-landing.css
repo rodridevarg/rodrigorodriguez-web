@@ -291,6 +291,15 @@
 .section--contact {
   background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%);
 }
+.contact__meet {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.contact__meet-hint {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
 
 /* Bot demo widget floating */
 .bot-widget {

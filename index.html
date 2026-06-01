@@ -315,6 +315,11 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="#problemas" class="btn btn--secondary">Ver si me pasa esto</a>
+            <!-- TODO: reemplazar href con link real de Google Meet -->
+            <a href="https://meet.google.com/placeholder" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" onclick="trackMeetClick('hero')">
+              <span>Agendá una videollamada sin compromiso</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </a>
           </div>
           <!-- Trust microcopy -->
           <div class="trust-badge">
@@ -570,24 +575,11 @@
     <!-- Sobre mí -->
     <section class="section section--about" id="sobre-mi" aria-labelledby="about-title">
       <div class="container">
-        <header class="section__header">
-          <span class="section__label">Sobre mí</span>
-          <h2 id="about-title" class="section__title">Especialista en automatización para consultorios médicos</h2>
-        </header>
-        <div class="about__container">
-          <div class="about__avatar">
-            <div class="avatar">
-              <img src="assets/perfil.jpeg" alt="Rodrigo Rodriguez" class="avatar__img" loading="lazy" width="280" height="280" />
-            </div>
-          </div>
-          <div>
-            <div class="about__text">
-              <p>Soy Rodrigo. Hace más de 10 años ayudo a emprendedores y profesionales a vender más con tecnología simple. Creé la Secretaria Virtual para médicos porque vi que muchos consultorios perdían pacientes por no responder rápido.</p>
-              <p style="margin-top: 16px;">Mientras el doctor está atendiendo, operando o simplemente descansando, el paciente pregunta por WhatsApp y no recibe respuesta. Ese turno se pierde. Mi misión es que ningún consultorio pierda una oportunidad por demora.</p>
-            </div>
-            <div class="about__cta" style="margin-top: 24px; text-align: center;">
-              <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('about_section')">Hablemos de tu consultorio</a>
-            </div>
+        <div class="about__micro">
+          <img src="assets/perfil.jpeg" alt="Rodrigo Rodriguez" class="about__micro-img" loading="lazy" width="28" height="28" />
+          <div class="about__micro-text">
+            <span class="about__micro-name">Rodrigo Rodriguez</span>
+            <span class="about__micro-role">Automatizo tareas en consultorios médicos</span>
           </div>
         </div>
       </div>
@@ -622,6 +614,14 @@
           <h2 id="contact-title" class="section__title">Pedí tu demo gratuita de 5 días</h2>
           <p class="section__subtitle">Completá el formulario y te contacto en menos de 24 horas para agendar la videollamada. Sin costo. Sin compromiso.</p>
         </header>
+        <div class="contact__meet" data-animate="fade-up">
+          <p class="contact__meet-hint">¿Preferís conocerme antes?</p>
+            <!-- TODO: reemplazar href con link real de Google Meet -->
+            <a href="https://meet.google.com/placeholder" class="btn btn--secondary" target="_blank" rel="noopener noreferrer" onclick="trackMeetClick('contacto')">
+            <span>Agendá una videollamada sin compromiso</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+          </a>
+        </div>
         <div class="contact contact--home">
           <form class="contact__form" action="https://formspree.io/f/rodrigo.desarrollador@gmail.com" method="POST" data-track-form="lead">
             <div class="form__group">
@@ -699,6 +699,14 @@
       if (typeof gtag !== 'undefined') gtag('event', 'click_whatsapp', {
         'event_category': 'engagement',
         'event_label': 'whatsapp_float'
+      });
+    }
+
+    function trackMeetClick(location) {
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { source: 'meet', location: location });
+      if (typeof gtag !== 'undefined') gtag('event', 'click_meet', {
+        'event_category': 'conversion',
+        'event_label': location
       });
     }
   </script>
