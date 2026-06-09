@@ -15,7 +15,7 @@
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, rgba(0,168,107,0.1) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, rgba(168,85,247,0.1) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,12 +120,12 @@
 
 /* Benefits section */
 .section--benefits {
-  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%);
+  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(168,85,247,0.02) 100%);
 }
 
 /* CTA Section */
 .section--cta {
-  background: linear-gradient(180deg, rgba(0,168,107,0.05) 0%, var(--bg-body) 50%, rgba(0,168,107,0.03) 100%);
+  background: linear-gradient(180deg, rgba(168,85,247,0.05) 0%, var(--bg-body) 50%, rgba(168,85,247,0.03) 100%);
 }
 .section--cta .section__cta {
   margin-top: 40px;
@@ -138,7 +138,7 @@
 
 /* Bot Demo Section */
 .section--demo {
-  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.02) 100%);
+  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(168,85,247,0.02) 100%);
 }
 .demo__container {
   display: grid;
@@ -261,7 +261,7 @@
    PRICING SECTION
    ======================================== */
 .section--pricing {
-  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,168,107,0.03) 50%, var(--bg-body) 100%);
+  background: linear-gradient(180deg, var(--bg-body) 0%, rgba(168,85,247,0.03) 50%, var(--bg-body) 100%);
 }
 .pricing {
   display: grid;
@@ -288,7 +288,7 @@
   box-shadow: 0 12px 40px rgba(0, 168, 107, 0.08);
 }
 .pricing-card--featured {
-  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(0,168,107,0.04) 100%);
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(168,85,247,0.04) 100%);
   border-color: var(--accent);
   border-width: 2px;
   box-shadow: 0 8px 32px rgba(0, 168, 107, 0.12);

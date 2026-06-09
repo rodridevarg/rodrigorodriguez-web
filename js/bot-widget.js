@@ -155,7 +155,7 @@
         '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' +
       '</button>' +
       '<div class="bot-widget__panel" id="botPanel">' +
-        '<div style="padding:16px 20px;background:rgba(0,168,107,0.08);border-bottom:1px solid rgba(0,168,107,0.15);display:flex;align-items:center;gap:10px;">' +
+        '<div style="padding:16px 20px;background:rgba(168,85,247,0.08);border-bottom:1px solid rgba(168,85,247,0.15);display:flex;align-items:center;gap:10px;">' +
           '<span style="width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulseDot 2s infinite;"></span>' +
           '<span style="font-weight:600;font-size:0.95rem;">' + BOT_AVATAR + ' ' + BOT_NAME + '</span>' +
           '<span style="font-size:0.75rem;color:var(--accent);margin-left:auto;">En línea</span>' +
