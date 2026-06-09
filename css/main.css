@@ -65,8 +65,9 @@
   transition: var(--transition);
   border-bottom: 1px solid transparent;
 }
-.header.scrolled {
-  background: rgba(11, 12, 16, 0.85);
+.header.scrolled,
+.header-minimal.scrolled {
+  background: rgba(15, 10, 26, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom-color: var(--border);
