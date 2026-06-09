@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía Meta Ads — Secretaria Virtual</title>
+  <style>
+    :root {
+      --bg: #0B0C10;
+      --bg-card: #15171E;
+      --text: #E2E8F0;
+      --text-secondary: #94A3B8;
+      --accent: #00A86B;
+      --accent-light: #00D68A;
+      --danger: #EF4444;
+      --warning: #F59E0B;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      padding-bottom: 60px;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 40px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+    }
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent-light);
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 12px;
+      color: var(--text-secondary);
+    }
+    .subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .card-highlight {
+      border-left: 4px solid var(--accent);
+    }
+    .card-danger {
+      border-left: 4px solid var(--danger);
+    }
+    .card-warning {
+      border-left: 4px solid var(--warning);
+    }
+    .label {
+      display: inline-block;
+      background: rgba(0,168,107,0.15);
+      color: var(--accent-light);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+    .label-danger {
+      background: rgba(239,68,68,0.15);
+      color: var(--danger);
+    }
+    .label-warning {
+      background: rgba(245,158,11,0.15);
+      color: var(--warning);
+    }
+    pre, .copy-box {
+      background: #1E2029;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: var(--text);
+      margin: 12px 0;
+      font-family: inherit;
+    }
+    .copy-box {
+      position: relative;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 10px 8px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--accent-light);
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    td {
+      color: var(--text-secondary);
+    }
+    tr:last-child td { border-bottom: none; }
+    ul, ol {
+      margin: 12px 0 12px 20px;
+      color: var(--text-secondary);
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .step-number {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      color: var(--bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.85rem;
+    }
+    .step-content {
+      flex: 1;
+    }
+    .step-title {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .step-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    .checklist {
+      list-style: none;
+      margin-left: 0;
+    }
+    .checklist li {
+      padding-left: 28px;
+      position: relative;
+    }
+    .checklist li::before {
+      content: "☐";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .highlight {
+      color: var(--accent-light);
+      font-weight: 600;
+    }
+    .danger-text {
+      color: var(--danger);
+      font-weight: 600;
+    }
+    .warning-text {
+      color: var(--warning);
+      font-weight: 600;
+    }
+    hr {
+      border: none;
+      height: 1px;
+      background: var(--border);
+      margin: 32px 0;
+    }
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(11,12,16,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 0;
+      z-index: 100;
+      margin-bottom: 20px;
+    }
+    .nav-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+    .nav a:hover, .nav a.active {
+      color: var(--accent-light);
+      background: rgba(0,168,107,0.1);
+    }
+    .tip {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      background: rgba(0,168,107,0.05);
+      border-radius: 8px;
+      padding: 12px;
+      margin-top: 12px;
+    }
+    .emoji { font-style: normal; }
+  </style>
+</head>
+<body>
+
+  <div class="nav">
+    <div class="nav-inner">
+      <a href="#estructura">Estructura</a>
+      <a href="#anuncios">Anuncios</a>
+      <a href="#budget">Presupuesto</a>
+      <a href="#paso">Paso a paso</a>
+      <a href="#testing">Testing</a>
+      <a href="#checklist">Checklist</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h1><span class="emoji">🚀</span> Guía Meta Ads — Secretaria Virtual</h1>
+    <p class="subtitle">Todo lo necesario para lanzar campañas de Meta Ads para tu Secretaria Virtual. Diseñado para leer en el celular.</p>
+
+    <div class="card card-highlight">
+      <div class="label">Pixel activo</div>
+      <p style="margin-bottom:0">ID: <strong class="highlight">2171795843596902</strong></p>
+      <p style="margin-bottom:0">Eventos configurados: PageView, Lead, Contact, CompleteRegistration</p>
+    </div>
+
+    <!-- ESTRUCTURA -->
+    <h2 id="estructura">1. Estructura de campañas</h2>
+
+    <h3>Con $500/día (arranque suave)</h3>
+    <div class="card">
+      <div class="label">1 Campaña</div>
+      <p><strong>CBO</strong> — Optimización de presupuesto de campaña</p>
+      <p>Objetivo: <strong class="highlight">Mensajes</strong> (más barato y rápido que Leads)</p>
+      <ul>
+        <li><strong>Conjunto 1:</strong> Médicos, Argentina, 28-65, Feed + Stories automático</li>
+        <li><strong>3 Anuncios:</strong> A1, A2, A4 (ver abajo)</li>
+      </ul>
+    </div>
+
+    <h3>Con $1500-2000/día (testing en serio)</h3>
+    <div class="card">
+      <div class="label">1 Campaña — 2 Conjuntos</div>
+      <p><strong>CBO</strong> con división por placements</p>
+      <ul>
+        <li><strong>Conjunto 1:</strong> Feed + Reels ($1200) → 3 anuncios imágenes/carrusel</li>
+        <li><strong>Conjunto 2:</strong> Stories + Reels ($800) → 3 anuncios video/vertical</li>
+      </ul>
+      <p class="tip">Separar por placement permite saber dónde funciona cada formato. Si los mezclás, Meta pone todo el presupuesto en Stories y ahoga los de Feed.</p>
+    </div>
+
+    <!-- AUDIENCIA -->
+    <h3>Targeting recomendado</h3>
+    <div class="card">
+      <table>
+        <tr><th>Variable</th><th>Valor</th></tr>
+        <tr><td>Ubicación</td><td>Argentina</td></tr>
+        <tr><td>Edad</td><td>28 — 65 años</td></tr>
+        <tr><td>Idioma</td><td>Español</td></tr>
+        <tr><td>Intereses</td><td>Medicina, Salud, Consultorio médico, Atención al paciente</td></tr>
+        <tr><td>Ocupaciones</td><td>Médico, Cirujano, Dentista, Cardiólogo, Pediatra, Psicólogo</td></tr>
+        <tr><td>Comportamientos</td><td>Propietarios de pequeños negocios, Administradores de página</td></tr>
+        <tr><td>Excluir</td><td>Menores de 28, interés "Universidad"</td></tr>
+      </table>
+    </div>
+
+    <!-- ANUNCIOS -->
+    <h2 id="anuncios">2. Los 6 anuncios para lanzar</h2>
+
+    <!-- A1 -->
+    <h3>A1: "El número que duele" (Imagen 1:1)</h3>
+    <div class="card card-highlight">
+      <div class="label">Prioridad: ALTA</div>
+      <h4>Formato</h4>
+      <p>Imagen 1:1 (1080x1080px) para Feed y Reels cuadrado</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">¿Sabés cuánto plata perdés por mes en turnos que no se cumplen?
+
+El 30% de los pacientes no avisa.
+Solo... no aparecen.
+
+Tu Secretaria Virtual confirma turnos automáticamente por WhatsApp.
+CERO inasistencias.
+CIEN por ciento organizado.
+
+Reunión gratuita de 20 min. Sin tarjeta.
+rodrigorodriguez.com.ar</div>
+      <h4>Título</h4>
+      <p>Menos inasistencias, más pacientes</p>
+      <h4>Descripción</h4>
+      <p>Reunión gratuita para médicos</p>
+      <h4>CTA</h4>
+      <p><strong>Solicitar ahora</strong></p>
+      <h4>Imagen</h4>
+      <p>Split visual: izquierda calendario con turnos tachados en rojo. Derecha celular con WhatsApp "Turno confirmado ✅" en verde. Contraste fuerte.</p>
+    </div>
+
+    <!-- A2 -->
+    <h3>A2: "No es tecnología, es ayuda" (Imagen 1:1)</h3>
+    <div class="card">
+      <div class="label">Prioridad: MEDIA</div>
+      <h4>Formato</h4>
+      <p>Imagen 1:1 (1080x1080px)</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">No necesitás saber nada de tecnología.
+
+En una videollamada de 20 minutos me contás cómo atendés hoy.
+En 2-5 días, tu Secretaria Virtual ya está respondiendo WhatsApp por vos.
+
+Configuro todo yo.
+Vos solo cerrás los pacientes que realmente necesitan tu atención.
+
+Reunión gratuita, sin compromiso.
+rodrigorodriguez.com.ar</div>
+      <h4>Título</h4>
+      <p>Hecho para médicos, no para programadores</p>
+      <h4>CTA</h4>
+      <p><strong>Más información</strong></p>
+      <h4>Imagen</h4>
+      <p>Rodrigo (cara visible) sonriendo con laptop o celular, consultorio moderno de fondo. **Cara = confianza.**</p>
+    </div>
+
+    <!-- A3 -->
+    <h3>A3: "¿Te pasan estas 3 cosas?" (Carrusel 1:1)</h3>
+    <div class="card">
+      <div class="label">Prioridad: MEDIA-ALTA</div>
+      <h4>Formato</h4>
+      <p>Carrusel 3 tarjetas 1:1 (1080x1080px cada una)</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">¿Te pasan estas 3 cosas todos los meses?
+
+Deslizá y mirá la solución →</div>
+      <h4>Tarjeta 1</h4>
+      <p><strong>Imagen:</strong> Celular con 47 notificaciones de WhatsApp a las 2 AM.<br>
+      <strong>Texto:</strong> "Te llegan mensajes a cualquier hora. Y tenés que responder vos."</p>
+      <h4>Tarjeta 2</h4>
+      <p><strong>Imagen:</strong> Calendario con huecos, silla vacía.<br>
+      <strong>Texto:</strong> "El 30% de los pacientes no avisa. Perdés plata y tiempo."</p>
+      <h4>Tarjeta 3</h4>
+      <p><strong>Imagen:</strong> Celular con WhatsApp ordenado, calendario lleno, médico tranquilo.<br>
+      <strong>Texto:</strong> "Tu Secretaria Virtual lo hace automático. Agendá una reunión gratuita."</p>
+      <h4>CTA</h4>
+      <p><strong>Solicitar ahora</strong></p>
+    </div>
+
+    <!-- A4 -->
+    <h3>A4: "Mientras dormís" (Video 15-20s, 9:16)</h3>
+    <div class="card card-highlight">
+      <div class="label">Prioridad: ALTA — Video</div>
+      <h4>Formato</h4>
+      <p>Video vertical 9:16 (1080x1920px), 15-20 segundos</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">A las 2 de la mañana, un paciente te escribe por WhatsApp.
+
+A las 2 de la mañana... vos estás durmiendo.
+
+Tu Secretaria Virtual responde automáticamente.
+Turnos. Consultas. Precios.
+Todo resuelto.
+
+Vos solo llegás a la mañana y encontrás todo organizado.
+
+Reunión gratuita de 20 min.
+Link en mi perfil.</div>
+      <h4>Guion de video</h4>
+      <ul>
+        <li><strong>0-3s:</strong> Celular vibrando en la oscuridad, hora 2:23 AM. Alerta roja.</li>
+        <li><strong>4-8s:</strong> Screen recording: paciente escribe "Quiero turno" → bot responde horarios automáticamente.</li>
+        <li><strong>9-15s:</strong> Médico al otro día, tranquilo, tomando mate, mirando calendario lleno.</li>
+        <li><strong>16-20s:</strong> Logo + CTA "Reunión gratuita".</li>
+      </ul>
+      <h4>CTA</h4>
+      <p><strong>Ver más</strong></p>
+    </div>
+
+    <!-- A5 -->
+    <h3>A5: "Demo gratis" (Imagen 9:16)</h3>
+    <div class="card">
+      <div class="label">Prioridad: MEDIA</div>
+      <h4>Formato</h4>
+      <p>Imagen vertical 9:16 (1080x1920px) para Stories</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">ATENDÉ WHATSAPP
+SIN TOCAR EL CELULAR
+
+Reunión gratuita
+Sin tarjeta. Sin compromiso.
+Tocá acá 👇</div>
+      <h4>Imagen</h4>
+      <p>Celular flotando con burbujas de WhatsApp saliendo en verde. Fondo oscuro navy #0B0C10 con acentos verdes.</p>
+      <h4>CTA</h4>
+      <p><strong>Más información</strong></p>
+    </div>
+
+    <!-- A6 -->
+    <h3>A6: "Así funciona" (Video 15s, 9:16)</h3>
+    <div class="card">
+      <div class="label">Prioridad: BAJA (testear en semana 2)</div>
+      <h4>Formato</h4>
+      <p>Video vertical 9:16, 15 segundos máximo</p>
+      <h4>Texto principal</h4>
+      <div class="copy-box">En 5 segundos, tu paciente ya tiene turno.
+
+Vos no hiciste nada.</div>
+      <h4>Guion de video</h4>
+      <ul>
+        <li><strong>1-3s:</strong> Paciente escribe "Quiero turno para mañana"</li>
+        <li><strong>4-8s:</strong> Bot responde con horarios disponibles</li>
+        <li><strong>9-12s:</strong> Paciente confirma → calendario se actualiza solo</li>
+        <li><strong>13-15s:</strong> "Reunión gratuita" + flecha hacia abajo</li>
+      </ul>
+      <h4>CTA</h4>
+      <p><strong>Ver más</strong></p>
+    </div>
+
+    <hr>
+
+    <!-- PRESUPUESTOS -->
+    <h2 id="budget">3. Presupuestos y estructuras</h2>
+
+    <h3>Comparativa rápida</h3>
+    <div class="card">
+      <table>
+        <tr><th>Presupuesto</th><th>Anuncios</th><th>Conjuntos</th><th>Objetivo</th></tr>
+        <tr><td><strong>$500/día</strong></td><td>3</td><td>1</td><td>Mensajes</td></tr>
+        <tr><td><strong>$1500/día</strong></td><td>5-6</td><td>2</td><td>Mensajes</td></tr>
+        <tr><td><strong>$2000/día</strong></td><td>6</td><td>2</td><td>Mensajes → Leads (día 8)</td></tr>
+      </table>
+    </div>
+
+    <h3>Distribución $2000/día (recomendado final)</h3>
+    <div class="card card-highlight">
+      <table>
+        <tr><th>Conjunto</th><th>Presupuesto</th><th>Anuncios</th></tr>
+        <tr><td>Feed + Reels</td><td>$1200/día</td><td>A1, A2, A3</td></tr>
+        <tr><td>Stories + Reels</td><td>$800/día</td><td>A4, A5, A6</td></tr>
+      </table>
+    </div>
+
+    <h3>Recomendación para arrancar HOY</h3>
+    <div class="card card-warning">
+      <div class="label label-warning">Importante</div>
+      <p><strong>Días 1-3: $500-800/día</strong> con 2-3 anuncios. Aprender qué funciona sin quemar plata.</p>
+      <p><strong>Días 4-7: $1200-1500/día</strong>. Duplicar lo que funcionó, añadir variaciones.</p>
+      <p><strong>Día 8+: $2000/día</strong>. Solo con anuncios que demostraron CPL &lt; $1000.</p>
+      <p class="warning-text">El anuncio que vos creés que va a funcionar, a veces no funciona. Aprendé barato primero.</p>
+    </div>
+
+    <hr>
+
+    <!-- PASO A PASO -->
+    <h2 id="paso">4. Paso a paso en Meta Ads Manager</h2>
+
+    <div class="step">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <div class="step-title">Entrá a Meta Ads Manager</div>
+        <div class="step-desc">business.facebook.com → Clickeá "Crear" en Campañas.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <div class="step-title">Elegí el objetivo</div>
+        <div class="step-desc">Seleccioná <strong class="highlight">"Mensajes"</strong> (no "Leads" todavía). Es más barato y rápido de aprender.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <div class="step-title">Nombre de campaña</div>
+        <div class="step-desc">"SV - Testing Wave 1 - $500" (SV = Secretaria Virtual)</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <div class="step-title">Presupuesto de campaña (CBO)</div>
+        <div class="step-desc">Activá "Optimización de presupuesto de campaña". Ingresá $500 (o el que elijas).</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">5</div>
+      <div class="step-content">
+        <div class="step-title">Creá el conjunto</div>
+        <div class="step-desc">Nombre: "Médicos Argentina 28-65". Completá ubicación, edad, idioma, intereses y comportamientos (ver tabla de targeting arriba).</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">6</div>
+      <div class="step-content">
+        <div class="step-title">Placements</div>
+        <div class="step-desc">Elegí <strong>"Ubicaciones recomendadas"</strong> (automático) si usás 1 conjunto. Si separás en 2 conjuntos, editá manualmente cada uno.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">7</div>
+      <div class="step-content">
+        <div class="step-title">Cargá los anuncios</div>
+        <div class="step-desc">Subí imagen o video. Pegá el texto principal, título, descripción y elegí el CTA correcto. Repetí para cada anuncio.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">8</div>
+      <div class="step-content">
+        <div class="step-title">Verificá el enlace</div>
+        <div class="step-desc">El link debe ir a <strong>https://rodrigorodriguez.com.ar</strong> (o la sección de contacto). Asegurate que el Pixel dispare PageView al entrar.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-number">9</div>
+      <div class="step-content">
+        <div class="step-title">Publicá y NO TOQUES NADA</div>
+        <div class="step-desc">Los primeros 48 horas, cerrá Meta Ads Manager. Dejá que el algoritmo aprenda sin interferencias.</div>
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- TESTING -->
+    <h2 id="testing">5. Protocolo de testing: día por día</h2>
+
+    <h3>Semana 1: Descubrimiento ($500-800/día)</h3>
+    <div class="card">
+      <table>
+        <tr><th>Día</th><th>Acción</th><th>Qué mirar</th></tr>
+        <tr><td><strong>1</strong></td><td>Lanzar 2-3 anuncios en 1 conjunto</td><td>Nada. No tocar.</td></tr>
+        <tr><td><strong>2</strong></td><td>Seguir sin tocar</td><td>Nada. No tocar.</td></tr>
+        <tr><td><strong>3</strong></td><td>Seguir sin tocar</td><td>Nada. No tocar.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Primer corte</strong></td><td>Pausar anuncios con CPL &gt;3x del promedio</td></tr>
+        <tr><td><strong>5</strong></td><td>Seguir corriendo los ganadores</td><td>CTR, CPM, inicio de mensajes</td></tr>
+        <tr><td><strong>6</strong></td><td>Seguir sin tocar</td><td>Volumen de mensajes</td></tr>
+        <tr><td><strong>7</strong></td><td><strong>Evaluar</strong></td><td>Elegir ganador: menor CPL + suficiente volumen</td></tr>
+      </table>
+      <p class="tip">Con "Mensajes", Meta necesita ~50 eventos para salir de Learning. Con $500/día y CPL $200 por mensaje, eso son 12 mensajes al día = 4 días. Con $800/día, 2-3 días.</p>
+    </div>
+
+    <h3>Semana 2: Duplicar y optimizar ($1200-1500/día)</h3>
+    <div class="card">
+      <ul>
+        <li>Crear <strong>Conjunto 2</strong> dentro de la misma campaña con 2-3 anuncios nuevos</li>
+        <li>Conjunto 1 (Wave 1): pausar perdedores, dejar ganador con $100-200/día</li>
+        <li>Conjunto 2 (Wave 2): $800-1000/día para los nuevos</li>
+        <li>Misma audiencia, mismos placements. La única variable: creativo.</li>
+      </ul>
+    </div>
+
+    <h3>Semana 3+: Escala</h3>
+    <div class="card card-highlight">
+      <ul>
+        <li>Si hay ganador claro (&gt;50 interacciones, CPL estable 3 días, CTR &gt;1.5%):</li>
+        <li>Crear <strong>nueva campaña</strong> solo con ese anuncio</li>
+        <li>Audiencia: <strong>Lookalike</strong> de los que enviaron mensaje</li>
+        <li>Presupuesto: $2000+/día</li>
+        <li>Objetivo: pasar a "Leads" (formulario) si hay suficiente volumen</li>
+      </ul>
+    </div>
+
+    <h3>Criterios para pausar un anuncio</h3>
+    <div class="card card-danger">
+      <div class="label label-danger">Matar el anuncio</div>
+      <ul>
+        <li>CPL &gt;3x del anuncio ganador después de 3 días</li>
+        <li>Menos de 1000 impresiones en 3 días (no tiene tracción)</li>
+        <li>CTR &lt; 0.5% después de 2000 impresiones</li>
+        <li>Cero mensajes iniciados en 72 horas</li>
+      </ul>
+    </div>
+
+    <h3>Métricas clave</h3>
+    <div class="card">
+      <table>
+        <tr><th>Métrica</th><th>Bueno</th><th>Mal</th></tr>
+        <tr><td><strong>CTR</strong> (Click-Through Rate)</td><td>&gt; 1.5%</td><td>&lt; 0.5%</td></tr>
+        <tr><td><strong>CPL</strong> (Costo por Lead/Mensaje)</td><td>&lt; $1000 ARS</td><td>&gt; $2500 ARS</td></tr>
+        <tr><td><strong>CPM</strong> (Costo por 1000 impresiones)</td><td>Depende del nicho</td><td>&gt; $5000 ARS</td></tr>
+        <tr><td><strong>Frecuencia</strong></td><td>&lt; 3 en 7 días</td><td>&gt; 5 en 7 días</td></tr>
+        <tr><td><strong>Tasa de mensajes</strong></td><td>&gt; 2% de clics</td><td>&lt; 0.5%</td></tr>
+      </table>
+    </div>
+
+    <hr>
+
+    <!-- ERRORES -->
+    <h2>6. Errores que destruyen resultados</h2>
+
+    <div class="card card-danger">
+      <ul>
+        <li><strong class="danger-text">Tocar los anuncios antes de 48h</strong> → Resetea el aprendizaje (Learning Phase)</li>
+        <li><strong class="danger-text">Cambiar presupuesto +20% por día</strong> → El algoritmo se vuelve loco</li>
+        <li><strong class="danger-text">Testear audiencia + creativo al mismo tiempo</strong> → No sabés qué funcionó</li>
+        <li><strong class="danger-text">Pausar todo y crear campaña nueva cada semana</strong> → Pierdes todo el aprendizaje</li>
+        <li><strong class="danger-text">Optimizar por "Leads" sin volumen</strong> → Meta nunca aprende, quedás en Learning forever</li>
+        <li><strong class="danger-text">Editar el anuncio activo</strong> → Vuelve a Learning. Duplicar y editar el duplicado.</li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- CHECKLIST -->
+    <h2 id="checklist">7. Checklist para lanzar</h2>
+
+    <div class="card">
+      <ul class="checklist">
+        <li>Pixel Meta verificado y recibiendo eventos</li>
+        <li>Formulario de contacto funciona (formspree o similar)</li>
+        <li>WhatsApp Business configurado para recibir mensajes</li>
+        <li>Imágenes 1:1 generadas (1080x1080)</li>
+        <li>Imágenes/video 9:16 generados (1080x1920)</li>
+        <li>Copy revisado y aprobado</li>
+        <li>URL de destino funciona en celular (testear)</li>
+        <li>Presupuesto diario definido ($500-2000)</li>
+        <li>Tarjeta de crédito/débito cargada en Meta</li>
+        <li>Cuenta publicitaria verificada (si es nueva, puede tardar 24h)</li>
+        <li>Notificaciones activadas para alertas de campaña</li>
+        <li>Calendario agendado: revisión día 3 y día 7</li>
+      </ul>
+    </div>
+
+    <h3>Verificar el Pixel antes de lanzar</h3>
+    <div class="card card-warning">
+      <div class="label label-warning">Obligatorio</div>
+      <ol>
+        <li>Instalá <strong>Meta Pixel Helper</strong> (extensión de Chrome)</li>
+        <li>Andá a https://rodrigorodriguez.com.ar</li>
+        <li>Debería mostrar: <strong>PageView</strong></li>
+        <li>Clickeá "Agendar una reunión" → Debería mostrar: <strong>Lead</strong></li>
+        <li>Clickeá en link de WhatsApp → Debería mostrar: <strong>Contact</strong></li>
+        <li>Enviá el formulario → Debería mostrar: <strong>CompleteRegistration</strong></li>
+      </ol>
+      <p class="tip">Si no se disparan los eventos, la campaña no va a optimizar bien. Arreglá esto antes de poner un peso.</p>
+    </div>
+
+    <hr>
+
+    <div class="card card-highlight" style="text-align:center">
+      <p style="margin-bottom:8px; font-size:1.1rem; color:var(--text)"><strong>Listo para lanzar</strong></p>
+      <p style="margin-bottom:0">Elegí 2-3 anuncios. Generá las imágenes. Entrá a Meta Ads Manager. Publicá. Y cerrá la compu por 48 horas.</p>
+    </div>
+
+    <p style="text-align:center; color:var(--text-secondary); font-size:0.85rem; margin-top:40px">
+      Guía generada el 31/05/2026 para rodrigorodriguez.com.ar<br>
+      Pixel ID: 2171795843596902
+    </p>
+
+  </div>
+
+</body>
+</html>

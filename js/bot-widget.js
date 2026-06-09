@@ -69,7 +69,7 @@
     {
       keywords: ['demo', 'probar', 'ejemplo', 'test', 'prueba', 'que es esto'],
       response: '¡Exacto! Esta es una **demo** del Centro Médico Demostración. 🏥\n\nEstás probando cómo respondería la Secretaria Virtual de un consultorio médico real: atendiendo turnos, obras sociales, preparación de estudios y más.\n\nSi te gusta cómo funciona, podemos configurarla para **tu propio consultorio**. Escribile a Rodrigo y te arma una demo personalizada con tus datos.',
-      cta: { text: 'Quiero mi Secretaria Virtual', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20soy%20medico%20y%20quiero%20pedir%20una%20demo%20para%20mi%20consultorio' }
+      cta: { text: 'Quiero mi Secretaria Virtual', href: 'https://wa.me/5492477614405?text=Hola%20Rodrigo,%20soy%20medico%20y%20quiero%20agendar%20una%20reuni%C3%B3n%20para%20conocer%20la%20Secretaria%20Virtual' }
     },
     {
       keywords: ['hola', 'buenas', 'buen dia', 'buenas tardes', 'buenas noches', 'hey', 'saludos'],
