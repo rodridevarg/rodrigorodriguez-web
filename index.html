@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Secretaria Virtual para Médicos | Recuperá pacientes perdidos</title>
-  <meta name="description" content="Cada mes perdés pacientes por inasistencias y consultas no respondidas. Recuperá turnos sin contratar más personal. Agendá una reunión gratuita." />
+  <meta name="description" content="Menos inasistencias, más consultas. Agendás. Ellos confirman. No llegan. Y no te avisan. Agendá una reunión sin costo." />
   <meta name="author" content="Rodrigo Rodriguez" />
   <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#0F0A1A" />
-  <meta name="msapplication-TileColor" content="#0F0A1A" />
+  <meta name="theme-color" content="#f7f9fb" />
+  <meta name="msapplication-TileColor" content="#f7f9fb" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Secretaria Virtual Médica" />
@@ -19,14 +19,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rodrigorodriguez.com.ar/" />
   <meta property="og:title" content="Secretaria Virtual para Médicos | Recuperá pacientes perdidos" />
-  <meta property="og:description" content="Cada mes perdés pacientes por inasistencias y consultas no respondidas. Recuperá turnos sin contratar más personal. Agendá una reunión gratuita." />
+  <meta property="og:description" content="Menos inasistencias, más consultas. Agendás. Ellos confirman. No llegan. Y no te avisan. Agendá una reunión sin costo." />
   <meta property="og:image" content="https://rodrigorodriguez.com.ar/assets/og-home.jpg" />
   <meta property="og:locale" content="es_AR" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:url" content="https://rodrigorodriguez.com.ar/" />
   <meta name="twitter:title" content="Secretaria Virtual para Médicos | Recuperá pacientes perdidos" />
-  <meta name="twitter:description" content="Cada mes perdés pacientes por inasistencias y consultas no respondidas. Recuperá turnos sin contratar más personal. Agendá una reunión gratuita." />
+  <meta name="twitter:description" content="Menos inasistencias, más consultas. Agendás. Ellos confirman. No llegan. Y no te avisan. Agendá una reunión sin costo." />
   <meta name="twitter:image" content="https://rodrigorodriguez.com.ar/assets/og-home.jpg" />
 
   <meta name="keywords" content="secretaria virtual médicos, reducir inasistencias turnos, automatización consultorio médico, chatbot médico argentina" />
@@ -39,7 +39,7 @@
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Rodrigo Rodriguez - Secretaria Virtual para Médicos",
-    "description": "Cada mes perdés pacientes por inasistencias y consultas no respondidas. Recuperá turnos sin contratar más personal. Agendá una reunión gratuita.",
+    "description": "Menos inasistencias, más consultas. Agendás. Ellos confirman. No llegan. Y no te avisan. Agendá una reunión sin costo.",
     "url": "https://rodrigorodriguez.com.ar",
     "telephone": "+54-9-2477-614405",
     "email": "rodrigo.desarrollador@gmail.com",
@@ -49,8 +49,8 @@
     "serviceType": ["Automatización WhatsApp para consultorios médicos", "Reducción de inasistencias", "Confirmación automática de turnos"],
     "offers": {
       "@type": "Offer",
-      "name": "Reunión gratuita Secretaria Virtual Médica",
-      "description": "Reunión gratuita de 20 minutos para consultorios médicos. Sin tarjeta de crédito.",
+      "name": "Reunión sin costo Secretaria Virtual Médica",
+      "description": "Reunión sin costo de 20 minutos para consultorios médicos. Sin tarjeta de crédito.",
       "price": "0",
       "priceCurrency": "ARS",
       "availability": "https://schema.org/InStock"
@@ -103,55 +103,12 @@
   <link rel="stylesheet" href="css/responsive.css" />
 
   <style>
-    .section--problems { background: linear-gradient(180deg, var(--bg-body) 0%, rgba(168,85,247,0.02) 100%); }
-    .hero--video {
-      position: relative;
-      overflow: hidden;
+    .section--problems { background: linear-gradient(180deg, var(--bg-body) 0%, rgba(0,104,95,0.02) 100%); }
+    .hero--landing {
       min-height: 100vh;
       display: flex;
       align-items: center;
-    }
-    .hero__video-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-      opacity: 0.55;
-    }
-    .hero__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(15,10,26,0.92) 0%, rgba(15,10,26,0.75) 40%, rgba(15,10,26,0.88) 100%);
-      z-index: 1;
-    }
-    .hero__content-wrapper {
-      position: relative;
-      z-index: 2;
-    }
-    .hero--video .hero__container {
-      grid-template-columns: 1fr !important;
-      text-align: center;
-      gap: 0;
-    }
-    .hero--video .hero__content {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .hero--video .hero__subtitle {
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero--video .hero__cta {
-      justify-content: center;
-    }
-    @media (min-width: 1024px) {
-      .hero--video .hero__container { text-align: left; }
-      .hero--video .hero__content { margin: 0; }
-      .hero--video .hero__subtitle { margin-left: 0; margin-right: 0; }
-      .hero--video .hero__cta { justify-content: flex-start; }
+      background: linear-gradient(135deg, var(--bg-body) 0%, var(--bg-card) 100%);
     }
     .hero__price {
       margin-top: 16px;
@@ -263,13 +220,14 @@
     }
     @media (max-width: 767px) {
       .cta-form-wrapper { grid-template-columns: 1fr; }
-      .cta-rodrigo { justify-content: center; text-align: center; }
+      .cta-rodrigo { flex-direction: column; justify-content: center; text-align: center; }
+      .cta-rodrigo img { width: 80px; height: 80px; }
     }
     noscript .hero__video-bg { display: none; }
-    noscript .hero__overlay { background: rgba(15,10,26,0.95); }
+    noscript .hero--landing { background: var(--bg-body) !important; }
     @media (prefers-reduced-motion: reduce) {
       .hero__video-bg { display: none; }
-      .hero__overlay { background: rgba(15,10,26,0.95); }
+      .hero--landing { background: var(--bg-body) !important; }
     }
     .header-minimal {
       position: fixed;
@@ -278,11 +236,18 @@
       width: 100%;
       height: var(--header-h);
       z-index: 1000;
-      background: rgba(15, 10, 26, 0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: transparent;
+      border-bottom: 1px solid transparent;
       display: flex;
       align-items: center;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+    .header-minimal.scrolled {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: var(--border);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
     }
     .header-minimal .container {
       display: flex;
@@ -299,8 +264,7 @@
 
   <noscript>
     <style>
-      .hero__video-bg { display: none !important; }
-      .hero__overlay { background: rgba(15,10,26,0.95) !important; }
+      .hero--landing { background: var(--bg-body) !important; }
     </style>
   </noscript>
 </head>
@@ -310,7 +274,7 @@
   <header class="header-minimal" id="header">
     <div class="container">
       <a href="#hero" class="logo" aria-label="Ir al inicio">
-        <span class="logo__text">Rodrigo Rodriguez</span>
+        <span class="logo__text">Secretaria Virtual</span>
       </a>
       <a href="#contacto" class="btn btn--small btn--nav" data-track="lead">Agendar reunión</a>
     </div>
@@ -318,19 +282,15 @@
 
   <main id="main-content">
     <!-- Hero -->
-    <section class="hero--landing hero--video" id="hero" aria-label="Presentación principal">
-      <video class="hero__video-bg" autoplay muted loop playsinline poster="assets/hero-poster.jpg">
-        <source src="assets/emocional.mp4" type="video/mp4">
-      </video>
-      <div class="hero__overlay"></div>
-      <div class="container hero__container hero__content-wrapper">
+    <section class="hero--landing" id="hero" aria-label="Presentación principal">
+      <div class="container hero__container">
         <div class="hero__content">
-          <h1 class="hero__title">Perdés pacientes todos los meses. Y no es por tu médico.</h1>
-          <p class="hero__subtitle">Cada mes, entre 10 y 30 pacientes no llegan a tu consultorio. No avisan. No aparecen. Y no cobrás.</p>
-          <p class="hero__price">Reunión gratuita de 20 min · Sin tarjeta de crédito</p>
+          <h1 class="hero__title">Menos inasistencias, más consultas.</h1>
+          <p class="hero__subtitle">Agendás. Ellos confirman. No llegan. Y no te avisan.</p>
+          <p class="hero__price">20 minutos. Sin tarjeta.</p>
           <div class="hero__cta">
             <a href="#contacto" class="btn btn--primary" data-track="lead" onclick="trackDemoClick('hero_button')">
-              <span>Agendar reunión gratuita</span>
+              <span>Agendar reunión sin costo</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
             </a>
             <a href="#demo" class="btn btn--secondary">Probar demo</a>
@@ -375,11 +335,11 @@
           <div class="demo__text">
             <p>Escribile como si fueras un paciente preguntando por un turno, obras sociales o precios. Vas a ver cómo responde en tiempo real.</p>
             <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-              <a href="https://rodrigo.asistentebot.com.ar/chat" class="btn btn--primary" target="_blank" rel="noopener noreferrer" onclick="trackDemoClick('demo_widget_primary')">Probar demo</a>
+              <a href="#bot-widget" class="btn btn--primary" onclick="trackDemoClick('demo_widget_primary')">Probar demo</a>
               <a href="#contacto" class="btn btn--secondary" data-track="lead" onclick="trackDemoClick('demo_widget_secondary')">Agendar reunión</a>
             </div>
           </div>
-          <div class="demo__widget-wrapper" data-animate="fade-up">
+          <div class="demo__widget-wrapper" data-animate="fade-up" id="bot-widget">
             <div data-bot-widget></div>
           </div>
         </div>
@@ -419,8 +379,8 @@
       <div class="container">
         <header class="section__header">
           <span class="section__label">Empezá hoy</span>
-          <h2 id="contact-title" class="section__title">Agendá una reunión de 20 minutos</h2>
-          <p class="section__subtitle">Sin costo. Sin compromiso. Sin tarjeta de crédito.</p>
+          <h2 id="contact-title" class="section__title">¿Querés ver cómo funciona en tu consultorio?</h2>
+          <p class="section__subtitle">Te muestro en 20 minutos. Si te sirve, lo implementamos. Si no, no pasa nada.</p>
         </header>
         <div class="cta-form-wrapper">
           <div class="cta-rodrigo">
@@ -444,16 +404,14 @@
                 <label for="whatsapp" class="form__label">WhatsApp *</label>
                 <input type="tel" id="whatsapp" name="whatsapp" class="form__input" placeholder="+54 9 11 1234-5678" required />
               </div>
-              <button type="submit" class="btn btn--primary btn--block" onclick="trackFormSubmit()">Agendar reunión gratuita</button>
+              <button type="submit" class="btn btn--primary btn--block" onclick="trackFormSubmit()">Agendar reunión sin costo</button>
               <p class="form__note" style="text-align: center; margin-top: 16px;">
                 También podés escribirme por <a href="https://wa.me/5492477614405?text=Hola%20Rodrigo,%20soy%20medico%20y%20quiero%20agendar%20una%20reuni%C3%B3n%20para%20conocer%20la%20Secretaria%20Virtual" target="_blank" rel="noopener noreferrer" data-track="contact" onclick="trackWhatsAppClick()">WhatsApp</a>.
               </p>
             </form>
           </div>
         </div>
-        <div class="section__cta" data-animate="fade-up" style="margin-top: 40px;">
-          <div class="urgency-badge">Solo 3 reuniones disponibles esta semana</div>
-        </div>
+
       </div>
     </section>
   </main>

@@ -211,6 +211,23 @@
   padding: 28px;
 }
 
+/* CTA Rodrigo - Mobile */
+.cta-form-wrapper {
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.cta-rodrigo {
+  flex-direction: column;
+  text-align: center;
+  gap: 12px;
+}
+
+.cta-rodrigo img {
+  width: 80px;
+  height: 80px;
+}
+
 /* Footer - Mobile */
 .footer__container {
   flex-direction: column;

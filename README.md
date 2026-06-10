@@ -31,12 +31,19 @@ En `index.html`, descomentá el bloque del Meta Pixel y reemplazá `PIXEL_ID` co
 ### OG Image
 Subí una imagen `og-image.jpg` (1200x630px recomendado) dentro de la carpeta `assets/` para que el link se vea bien al compartir.
 
-## 🎨 Tecnologías
+## 🎨 Design System
+
+Sistema de diseño **Clinical Precision** — modo claro optimizado para entornos médicos:
+- Paleta: Teal médico (`#00685f`) sobre fondo blanco azulado (`#f7f9fb`)
+- Tipografía: Inter (Google Fonts)
+- Diseño: Mobile First / Responsive
+- Documentación: ver `DESIGN.md`
+
+## 🛠 Tecnologías
 
 - HTML5 semántico
 - CSS3 (Custom Properties, Grid, Flexbox)
 - JavaScript vanilla (sin frameworks)
-- Mobile First / Responsive
 - Intersección Observer para animaciones suaves
 
 ## 📱 Contacto

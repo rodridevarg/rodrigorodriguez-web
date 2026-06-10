@@ -92,4 +92,34 @@ Eliminar contenido técnico que confunde a personas no programadoras. Mantener l
 
 ---
 
-> ✅ Ejecutado por OpenCode el 2026-05-23. Para continuar, proporcioná los IDs de tracking o indicá ajustes adicionales.
+## Actualizaciones 2026-06-09
+
+### Cambios de copy
+- **Hero H1:** "Menos inasistencias, más consultas." (antes: "Cada mes perdés pacientes...")
+- **Hero subtítulo:** "Agendás. Ellos confirman. No llegan. Y no te avisan."
+- **Hero CTA:** "20 minutos. Sin tarjeta." + "Agendar reunión sin costo"
+- **Sección contacto:** "¿Querés ver cómo funciona en tu consultorio?" + "Te muestro en 20 minutos. Si te sirve, lo implementamos. Si no, no pasa nada."
+- **Eliminado:** "Solo 3 reuniones disponibles esta semana" (urgency badge)
+- **Botón formulario:** "Agendar reunión sin costo" (unificado)
+- **Demo:** Botón "Probar demo" ahora hace scroll al widget en página (no abre pestaña)
+
+### Cambios de diseño
+- **Paleta:** Modo claro Clinical Precision (teal #00685f sobre fondo #f7f9fb)
+- **Header:** Transparente al inicio, aparece al scrollear con fondo blanco + blur
+- **Logo:** "Secretaria Virtual" en lugar de "Rodrigo Rodriguez"
+- **Video:** Eliminado video de fondo de 6MB (mejora velocidad de carga)
+- **Foto mobile:** Apilada en columna en versión mobile (más grande y legible)
+
+### Archivos actualizados
+- `index.html` — Copy, meta tags, schema, colores inline
+- `css/base.css` — Variables CSS a modo claro
+- `css/main.css` — Colores y sombras ajustados
+- `css/home.css` — Gradients y acentos actualizados
+- `css/bot-landing.css` — Colores ajustados
+- `manifest.json` — Theme colors actualizados
+- `guia_meta_ads.html` — Copy de anuncios actualizados a nuevo tono
+- `DESIGN.md` — Nuevo documento de sistema de diseño
+
+---
+
+> ✅ Ejecutado por OpenCode el 2026-05-23. Actualizado el 2026-06-09.
